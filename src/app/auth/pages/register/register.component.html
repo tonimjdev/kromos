@@ -1,1 +1,64 @@
-<p>register works!</p>
+
+<form class="formulario" 
+autocomplete="off"
+[formGroup]="miFormulario"
+(ngSubmit)="registro()">
+
+    <div>
+        <p>Your name</p>
+        <input 
+               type="text" 
+               formControlName="name" 
+               placeholder="John Smith">
+        <span></span>
+    </div>
+    <div>
+        <p>Email adress</p>
+        <input 
+               type="email" 
+               formControlName="email" 
+               placeholder="email@hello.com">
+        <span></span>
+    </div>
+
+    <div>
+        <p>Password</p>
+        <input 
+               type="password"
+               formControlName="password" 
+               placeholder="Enter your password...">
+        <span></span>
+    </div>
+
+    <div>
+        <p>Confirm your password</p>
+        <input 
+               type="password"
+               formControlName="confirmPassword" 
+               placeholder="Enter your password again...">
+        <span></span>
+    </div>
+
+    <div class="checkEighteen">
+        <input
+        type="checkbox"
+        formControlName="older"
+        value="older"
+      />
+      <span><label> I certify that I amb at least 18 years </label></span>
+      
+    </div>
+
+    
+    
+    
+    <div>
+        <div>
+            <div></div>
+            <button>
+                LOG IN
+            </button>
+        </div>
+    </div>
+
+</form>

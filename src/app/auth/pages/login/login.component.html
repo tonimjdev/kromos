@@ -1,46 +1,38 @@
 
-<form autocomplete="off">
-                
-    <span>
-        Login
-    </span>
+<form class="formulario" 
+autocomplete="off"
+[formGroup]="miFormulario"
+(ngSubmit)="login()">
 
     <div>
-        <span>Email</span>
+        <p>Email adress</p>
         <input 
                type="email" 
-               name="email" 
-               placeholder="Ingrese su email">
+               formControlName="email" 
+               placeholder="email@hello.com">
         <span></span>
     </div>
 
     <div>
-        <span>Password</span>
+        <p>Password</p>
         <input 
                type="password"
-               name="password" 
-               placeholder="Ingrese su contraseña">
-        <span class="focus-input100"></span>
+               formControlName="password" 
+               placeholder="Enter your password...">
+        <span></span>
     </div>
     
-    <div></div>
+    <div class="forgot">
+        <a href="#">I forgot my password</a>
+    </div>
     
     <div>
         <div>
             <div></div>
-            <button>
-                Login
+            <button type="submit">
+                LOG IN
             </button>
         </div>
     </div>
 
-    <div>
-        <span>
-            ¿No tienes cuenta?
-        </span>
-
-        <a routerLink="/auth/registro">
-            Crear una aquí
-        </a>
-    </div>
 </form>

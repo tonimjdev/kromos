@@ -10,7 +10,7 @@ autocomplete="off"
                type="text" 
                formControlName="name" 
                placeholder="John Smith">
-        <span></span>
+               <p class="error" *ngIf="esValido('name') && submit" >* Enter a valid name</p>
     </div>
     <div>
         <p>Email adress</p>
@@ -18,7 +18,7 @@ autocomplete="off"
                type="email" 
                formControlName="email" 
                placeholder="email@hello.com">
-        <span></span>
+            <p class="error" *ngIf="esValido('email') && submit" >* Enter a valid email</p>
     </div>
 
     <div>
@@ -27,7 +27,7 @@ autocomplete="off"
                type="password"
                formControlName="password" 
                placeholder="Enter your password...">
-        <span></span>
+               <p class="error" *ngIf="esValido('password') && submit" >* Enter a valid password, at least 6 characters</p>
     </div>
 
     <div>
@@ -36,7 +36,7 @@ autocomplete="off"
                type="password"
                formControlName="confirmPassword" 
                placeholder="Enter your password again...">
-        <span></span>
+               <p class="error" *ngIf="esValido('confirmPassword') && submit" >* Enter a valid password, at least 6 characters</p>
     </div>
 
     <div class="checkEighteen">
@@ -55,8 +55,8 @@ autocomplete="off"
     <div>
         <div>
             <div></div>
-            <button>
-                LOG IN
+            <button type="submit">
+                SIGN UP
             </button>
         </div>
     </div>

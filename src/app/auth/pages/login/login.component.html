@@ -7,10 +7,10 @@ autocomplete="off"
     <div>
         <p>Email adress</p>
         <input 
-               type="email" 
+               type="email"
                formControlName="email" 
                placeholder="email@hello.com">
-        <span></span>
+               <p class="error" *ngIf="esValido('email') && submit" >* Enter a valid email</p>
     </div>
 
     <div>
@@ -19,7 +19,7 @@ autocomplete="off"
                type="password"
                formControlName="password" 
                placeholder="Enter your password...">
-        <span></span>
+        <p class="error" *ngIf="esValido('password') && submit" >* Enter a valid password, at least 6 characters</p>
     </div>
     
     <div class="forgot">

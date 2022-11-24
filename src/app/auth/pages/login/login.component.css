@@ -29,6 +29,25 @@
     font-size: 0.7em;
     font-weight: 400;
 }
+.formulario .error2 {
+    color: red;
+    border: 1px solid red;
+    border-radius: 50px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+    animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+    from {
+        scale: 0;
+    }
+    to {
+        scale: 1;
+    }
+}
 
 div:focus-within p{
     color: #0025E4;

@@ -21,10 +21,12 @@ autocomplete="off"
                placeholder="Enter your password...">
         <p class="error" *ngIf="esValido('password') && submit" >* Enter a valid password, at least 6 characters</p>
     </div>
+    <p class="error2" *ngIf="datosNoValidos"> {{ messageError }}</p>
     
     <div class="forgot">
         <a href="#">I forgot my password</a>
     </div>
+    
     
     <div>
         <div>

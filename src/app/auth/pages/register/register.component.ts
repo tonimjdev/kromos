@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,8 @@ export class RegisterComponent {
 
   submit: boolean = false;
 
-  constructor( private fb: FormBuilder ) { }
+  constructor( private fb: FormBuilder,
+                private router: Router ) { }
 
   // Validador datos cruzados (match de passwords)*****
   passwordMatch: 
@@ -26,7 +28,7 @@ export class RegisterComponent {
   miFormulario: FormGroup = this.fb.group ({
     name: ['Toni', [Validators.required ]],
     email: ['toni@hola.es', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(6)]],
+    password: ['123456', [Validators.required, Validators.minLength(6)]],
     confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
     older: ['', [Validators.required ]],
   }, {validators: this.passwordMatch});
@@ -42,5 +44,7 @@ export class RegisterComponent {
     }
     console.log('this.miFormulario.value', this.miFormulario.value);
     console.log('this.miFormulario.valid', this.miFormulario.valid);
+
+    this.router.navigateByUrl('/dashboard');
   }
 }

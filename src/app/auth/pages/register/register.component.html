@@ -48,9 +48,10 @@ autocomplete="off"
       <span><label> I certify that I amb at least 18 years </label></span>
       
     </div>
-
-    
-    
+    <div class="errorConfirm" >
+    <p *ngIf="esValido('older') && submit" >* Please check to confirm</p>
+</div>
+    <p class="error2" *ngIf="datosNoValidos"> {{ messageError }}</p>
     
     <div>
         <div>

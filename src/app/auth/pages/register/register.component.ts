@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -10,9 +11,12 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
 
   submit: boolean = false;
+  datosNoValidos: boolean = false;
+  messageError: string = '';
 
   constructor( private fb: FormBuilder,
-                private router: Router ) { }
+                private router: Router,
+                private authService: AuthService ) { }
 
   // Validador datos cruzados (match de passwords)*****
   passwordMatch: 
@@ -37,14 +41,25 @@ export class RegisterComponent {
   esValido(campo: string) {
     return this.miFormulario.controls[campo].errors;
   }
+  // Registro nuevo usuario
   registro() {
+    console.log('Formulario válido?', this.miFormulario.valid);
+    console.log('check older 18?', this.miFormulario.controls['older'].errors);
     this.submit = true;
-    if (this.miFormulario.value.password != this.miFormulario.value.confirmPassword) {
-      alert ('Password no match!')
-    }
-    console.log('this.miFormulario.value', this.miFormulario.value);
-    console.log('this.miFormulario.valid', this.miFormulario.valid);
-
-    this.router.navigateByUrl('/dashboard');
+   if (this.miFormulario.value.password != this.miFormulario.value.confirmPassword) {
+    alert ('Password no match!')
+    } else if(!this.miFormulario.valid) { alert ('Formulario no válido');
+  } else {
+    const { name, email, password } = this.miFormulario.value;
+    this.authService.registro( name, email,password )
+    .subscribe( ok => {
+      if ( ok === true ) {
+        this.router.navigateByUrl('/dashboard');
+      } else {
+        this.datosNoValidos=true;
+        this.messageError = ok;
+      }
+    });
   }
+}
 }

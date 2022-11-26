@@ -15,7 +15,7 @@ export class LoginComponent {
   messageError: string = '';
 
   miFormulario: FormGroup = this.fb.group ({
-    email: ['toni@hola.com', [Validators.required, Validators.email]],
+    email: ['toni@hola.es', [Validators.required, Validators.email]],
     password: ['123456', [Validators.required, Validators.minLength(6)]],
 
   });
@@ -39,7 +39,7 @@ export class LoginComponent {
 
     this.authService.login( email,password )
     .subscribe( ok => {
-        console.log( ok );
+
 
       if ( ok === true ) {
         this.router.navigateByUrl('/dashboard');

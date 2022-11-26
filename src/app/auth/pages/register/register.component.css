@@ -31,6 +31,23 @@
     font-size: 0.7em;
     font-weight: 400;
 }
+.formulario .errorConfirm p {
+    color: red;
+    font-size: 0.7em;
+    font-weight: 400;
+    margin: -2em 0 2em -8em;
+}
+.formulario .error2 {
+    color: red;
+    border: 1px solid red;
+    border-radius: 50px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+    animation: fadeIn 0.2s;
+    margin-bottom: 1em;
+}
 
 div:focus-within p{
     color: #0025E4;

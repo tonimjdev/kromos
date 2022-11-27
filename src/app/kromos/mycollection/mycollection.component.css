@@ -1,12 +1,46 @@
 
 .logo {
     text-align: center;
-    padding: 1em 0;
+    padding: 1em 0 0.8em 0;
     font-weight: 600;
     font-size: 2em;
 }
-
-h1 {
-    font-size: 1.2em;
+.container h1, h2 {
+    margin-left: 0.4em;
+}
+.container h3 {
+    margin-left: 0.5em;
+}
+h1, h2 {
+    font-size: 1.6em;
     font-weight: 400;
+}
+h3 {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.boton1 {
+    background-color: #50555C;
+    color: #fff;
+    width: 340px;
+    padding: 1.2em 0;
+    border-radius: 20px;
+    margin-bottom: 1em;
+    font-size: 1.1em;
+    font-weight: 300;
+    cursor: pointer;
+    border: none;
+}
+.boton2 {
+    background-color: #50555C;
+    color: #fff;
+    width: 340px;
+    padding: 0.5em 0;
+    border-radius: 15px;
+    margin-bottom: 0.8em;
+    font-size: 1.1em;
+    font-weight: 300;
+    cursor: pointer;
+    border: none;
 }

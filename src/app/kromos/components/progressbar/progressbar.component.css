@@ -1,0 +1,12 @@
+p {
+    font-size: 0.7em;
+    font-weight: 300;
+    margin-bottom: 0.2em;
+
+}
+.container {
+    width: 340px;
+}
+.progress-bar {
+    margin:0;
+}

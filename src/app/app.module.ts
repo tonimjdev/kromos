@@ -5,18 +5,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from "./shared/shared.module";
+import { KromosModule } from './kromos/kromos.module';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
     ],
-    providers: [],
-    bootstrap: [AppComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
         SharedModule,
-        HttpClientModule
-    ]
+        HttpClientModule,
+        KromosModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+    
 })
 export class AppModule { }

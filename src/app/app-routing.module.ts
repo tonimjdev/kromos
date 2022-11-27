@@ -15,6 +15,12 @@ const routes: Routes = [
     canLoad: [ ValidarTokenGuard ]
   },
   {
+    path: 'mycollection',
+    loadChildren: () => import('./kromos/kromos.module').then( m => m.KromosModule ),
+    canActivate: [ ValidarTokenGuard ],
+    canLoad: [ ValidarTokenGuard ]
+  },
+  {
     path:'**',
     redirectTo: 'auth'
   }

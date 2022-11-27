@@ -42,7 +42,7 @@ export class LoginComponent {
 
 
       if ( ok === true ) {
-        this.router.navigateByUrl('/dashboard');
+        this.router.navigateByUrl('/mycollection');
       } else {
         this.datosNoValidos=true;
         this.messageError = ok;

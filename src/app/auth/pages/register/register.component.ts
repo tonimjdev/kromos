@@ -34,7 +34,7 @@ export class RegisterComponent {
     email: ['toni@hola.es', [Validators.required, Validators.email]],
     password: ['123456', [Validators.required, Validators.minLength(6)]],
     confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
-    older: ['', [Validators.required ]],
+    older: [false, [Validators.requiredTrue ]],
   }, {validators: this.passwordMatch});
 
   // Mensaje de error en el HTML si no pasa la validación
@@ -44,17 +44,17 @@ export class RegisterComponent {
   // Registro nuevo usuario
   registro() {
     console.log('Formulario válido?', this.miFormulario.valid);
-    console.log('check older 18?', this.miFormulario.controls['older'].errors);
+    console.log('check older 18?', this.miFormulario.controls['older'].value);
     this.submit = true;
    if (this.miFormulario.value.password != this.miFormulario.value.confirmPassword) {
-    alert ('Password no match!')
-    } else if(!this.miFormulario.valid) { alert ('Formulario no válido');
+    this.messageError = 'Password no match!'; this.datosNoValidos=true;
+    } else if(!this.miFormulario.valid) { return;
   } else {
     const { name, email, password } = this.miFormulario.value;
     this.authService.registro( name, email,password )
     .subscribe( ok => {
       if ( ok === true ) {
-        this.router.navigateByUrl('/dashboard');
+        this.router.navigateByUrl('/mycollection');
       } else {
         this.datosNoValidos=true;
         this.messageError = ok;

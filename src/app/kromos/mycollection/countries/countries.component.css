@@ -1,0 +1,86 @@
+.header {
+    margin: 1.5em 1em;   
+}
+
+.header span {
+    margin-left: 0.3em;
+}
+
+
+.header a {
+    margin-left: 0.6em;
+    color: #000;
+    text-decoration: none;
+}
+
+.header svg {
+    margin-right: 0.5em;
+}
+
+.container h1, h4, h5  {
+    margin-left: 0.4em;
+}
+.container h5  {
+    margin-left: 0.6em;
+}
+
+h1 {
+    font-size: 1.6em;
+    font-weight: 400;
+}
+h4 {
+    font-size: 1.4em;
+    font-weight: 400;
+}
+h5 {
+    font-size: 1.1em;
+    font-weight: 400;
+}
+.container h3 {
+    margin-left: 0.5em;
+}
+h3 {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+.boton2 {
+    background-color: #50555C;
+    color: #fff;
+    width: 320px;
+    padding: 0.3em 1em;
+    border-radius: 15px;
+    margin-bottom: 0.6em;
+    font-size: 1.1em;
+    font-weight: 300;
+    cursor: pointer;
+    border: none;
+    display:flex;
+}
+
+.countriesButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.5em;
+}
+.numCards {
+    font-size: 0.8em;
+    font-weight: 300;
+}
+.boton2 .countryName {
+    margin: 0;
+    text-align: left;
+}
+.boton2 .buttonRight {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1em;
+}
+.boton2 .buttonRight p {
+    margin:0;
+    text-align: right!important;
+}
+
+.espacioBottom {
+    height: 100px;
+}

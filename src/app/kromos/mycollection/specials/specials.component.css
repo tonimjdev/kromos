@@ -36,5 +36,13 @@ h3 {
     font-size: 1.2em;
     font-weight: 300;
 }
+.card {
+    background-color: purple;
+    color: #fff;
+    width: 105px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+}
 
 

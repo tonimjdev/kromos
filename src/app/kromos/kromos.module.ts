@@ -12,8 +12,7 @@ import { ProgressbarComponent } from './components/progressbar/progressbar.compo
 import { SpecialsComponent } from './mycollection/specials/specials.component';
 import { CountriesComponent } from './mycollection/countries/countries.component';
 import { TimelineComponent } from './mycollection/timeline/timeline.component';
-
-
+import { CountryComponent } from './mycollection/countries/country/country.component';
 
 
 @NgModule({
@@ -22,7 +21,8 @@ import { TimelineComponent } from './mycollection/timeline/timeline.component';
     ProgressbarComponent,
     SpecialsComponent,
     CountriesComponent,
-    TimelineComponent
+    TimelineComponent,
+    CountryComponent
   ],
   imports: [
     CommonModule,

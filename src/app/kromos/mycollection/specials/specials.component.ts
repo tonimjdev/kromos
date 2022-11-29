@@ -17,4 +17,12 @@ export class SpecialsComponent implements OnInit {
     return this.cardsService.specials;
   }
 
+  cartaSel( id:number ) {
+    this.cardsService.sumarCartas(id);
+  }
+
+  resta( id:number ) {
+    this.cardsService.restarCartas(id);
+  }
+
 }

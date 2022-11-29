@@ -13,6 +13,7 @@ import { SpecialsComponent } from './mycollection/specials/specials.component';
 import { CountriesComponent } from './mycollection/countries/countries.component';
 import { TimelineComponent } from './mycollection/timeline/timeline.component';
 import { CountryComponent } from './mycollection/countries/country/country.component';
+import { RepeatedComponent } from './mycollection/repeated/repeated.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CountryComponent } from './mycollection/countries/country/country.compo
     SpecialsComponent,
     CountriesComponent,
     TimelineComponent,
-    CountryComponent
+    CountryComponent,
+    RepeatedComponent
   ],
   imports: [
     CommonModule,

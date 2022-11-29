@@ -37,7 +37,7 @@ h3 {
     font-weight: 300;
 }
 .card2 {
-    background-color: rgb(145, 11, 145);
+    background-image: radial-gradient(#f20089 0%, #bc00dd 50%, #2d00f7 80%);
     color: #fff;
     width: 100px;
     height: 125px;
@@ -48,7 +48,7 @@ h3 {
     border-radius: 15px;
     border: none;
 }
-.card2 .reset {
+.card2 .resta {
     margin-right: 4em;
     margin-top: 0.7em;
 }

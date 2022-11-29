@@ -19,4 +19,6 @@ export class CountriesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  // Germany -> "color": "linear-gradient(#03071e 10%, #d00000 60%, #ffba08 90%)"
 }

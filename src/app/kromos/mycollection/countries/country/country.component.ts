@@ -14,6 +14,9 @@ export class CountryComponent implements OnInit {
     return this.countriesService.country
   }
 
+  flag:string = `${this.country.toLowerCase().replace(/\s+/g, '')}.svg`;
+
+
   ngOnInit(): void {
   }
 

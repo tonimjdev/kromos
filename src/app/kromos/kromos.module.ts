@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 
 import { MycollectionComponent } from './mycollection/mycollection.component';
 import { KromosRoutingModule } from './kromos-routing.module';
-import { ProgressbarComponent } from './components/progressbar/progressbar.component';
+import { ProgressbarComponent } from './mycollection/components/progressbar/progressbar.component';
 
 import { SpecialsComponent } from './mycollection/specials/specials.component';
 import { CountriesComponent } from './mycollection/countries/countries.component';

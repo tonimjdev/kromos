@@ -11,8 +11,9 @@ export class CountriesComponent implements OnInit {
   constructor( private countriesService: CountriesService ) { }
 
 
-  paisElegido(pais:string) {
-    this.countriesService.paisElegido(pais);
+  paisElegido( pais:string ) {
+
+    this.countriesService.paisElegido( pais );
   }
 
   ngOnInit(): void {

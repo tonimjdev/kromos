@@ -9,7 +9,7 @@ export class CountriesService {
 
   country:string = "";
 
-  paisElegido(pais:string) {
+  paisElegido( pais:string ) {
     this.country = pais;
   }
 

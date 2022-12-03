@@ -5,3 +5,8 @@
     max-width: 375px;
     font-family: 'Montserrat', sans-serif;
   }
+
+  html {
+    background-color: #1E1E1E;
+    color: #D9D9D9;
+  }

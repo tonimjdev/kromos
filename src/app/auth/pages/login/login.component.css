@@ -1,3 +1,5 @@
+
+
 .formulario {
     margin: 2em 0;
     display: flex;
@@ -16,13 +18,16 @@
     font-weight: 300;
     border-radius: 10px;
     padding: 0.5em 0.5em;
-    border: 0.4px solid grey;
+    border: 0.4px solid #323232;
     margin-bottom: 0.5em;
     outline:none;
+    background-color: #323232;
+    color: #D9D9D9;
 }
 
 .formulario input:focus {
-    box-shadow: 1px 5px 30px #0026e43b;
+    border: 0.4px solid #888888;
+    color: #fff;
 }
 .formulario .error {
     color: red;
@@ -50,7 +55,7 @@
 }
 
 div:focus-within p{
-    color: #0025E4;
+    color: #ffffff;
     font-weight: 400;
    
 }
@@ -63,7 +68,7 @@ div:focus-within p{
 .forgot a{
     font-size: 0.9em;
     font-weight: 300;
-    color: #000;
+    color: #D9D9D9;
     cursor: pointer;
 }
 button {

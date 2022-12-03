@@ -5,7 +5,7 @@ autocomplete="off"
 (ngSubmit)="registro()">
 
     <div>
-        <p>Your name</p>
+        <p>Name</p>
         <input 
                type="text" 
                formControlName="name" 
@@ -13,7 +13,7 @@ autocomplete="off"
                <p class="error" *ngIf="esValido('name') && submit" >* Enter a valid name</p>
     </div>
     <div>
-        <p>Email adress</p>
+        <p>Email address</p>
         <input 
                type="email" 
                formControlName="email" 
@@ -45,7 +45,7 @@ autocomplete="off"
         formControlName="older"
         value="older"
       />
-      <span><label> I certify that I amb at least 18 years </label></span>
+      <span><label> I certify that I am at least 18 years old</label></span>
       
     </div>
     <div class="errorConfirm" >

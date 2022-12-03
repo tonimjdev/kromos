@@ -36,3 +36,36 @@ h3 {
     font-size: 1.2em;
     font-weight: 300;
 }
+.card2 {
+    background: rgb(50,6,28);
+background: linear-gradient(270deg, rgba(50,6,28,1) 22%, rgba(113,13,64,1) 74%, rgba(255,255,255,1) 100%);
+    color: #fff;
+    width: 100px;
+    height: 125px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4em;
+    border-radius: 15px;
+    border: none;
+}
+.card2 .resta {
+    margin-right: 4em;
+    margin-top: 0.7em;
+}
+.card2 h5 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-top: 0.6em;
+}
+.card2 .numCards {
+    background-color: rgba(255, 255, 255, 0.316);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+}
+.container {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}

@@ -11,7 +11,8 @@
     </div>
     <div class="container mt-3">
         <div class="row">
-        <div class="card2 mb-3" *ngFor="let repetido of repetidos">
+        <div class="card2 mb-3" *ngFor="let repetido of repetidos" 
+        [ngStyle]="{'background-image': repetido.color}">
             
             <h5>
                 {{repetido.card}}

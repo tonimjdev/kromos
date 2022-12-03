@@ -1,5 +1,11 @@
+.container {
+    background-color: #1E1E1E;
+    color: #D9D9D9;
+}
 .header {
-    margin: 1.5em 1em;   
+    padding: 1.5em 1em;   
+    background-color: #1E1E1E;
+    color: #D9D9D9;
 }
 
 .header span {
@@ -9,7 +15,7 @@
 
 .header a {
     margin-left: 0.6em;
-    color: #000;
+    color: #D9D9D9;
     text-decoration: none;
 }
 
@@ -28,6 +34,8 @@ h1 {
 h4 {
     font-size: 1.4em;
     font-weight: 400;
+    margin-bottom: 0;
+    padding-bottom: 0.4em;
 }
 .container h3 {
     margin-left: 0.5em;
@@ -37,7 +45,7 @@ h3 {
     font-weight: 300;
 }
 .card2 {
-    background-image: radial-gradient(#f20089 0%, #bc00dd 50%, #2d00f7 80%);
+    background-color: lightgray;
     color: #fff;
     width: 100px;
     height: 125px;

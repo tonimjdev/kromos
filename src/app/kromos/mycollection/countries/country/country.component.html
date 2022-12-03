@@ -13,5 +13,26 @@
     </h1>
     <h3>Collection's progress</h3>
     <app-progressbar></app-progressbar>
+    </div>
+    <div class="container mt-3">
+        <div class="row">
+        <div class="card2 mb-3" *ngFor="let cartaPais of cartaspaisElegido" (click)="cartaSel(cartaPais.id)"
+        [ngStyle]="{'background-image': cartaPais.color}" >
+  
+            <div class="resta" (click)="resta(cartaPais.id)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="29" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                  </svg>
+            </div>
+            <h5>
+                {{cartaPais.card}}
+            </h5>
+            <p class="numCards">{{cartaPais.ud}}</p>
+        </div>
+        </div>
+        </div>
+
+    
 
 <app-navbar></app-navbar>

@@ -1,5 +1,4 @@
 
-
 .formulario {
     margin: 2em 0;
     display: flex;
@@ -18,10 +17,10 @@
     font-weight: 300;
     border-radius: 10px;
     padding: 0.5em 0.5em;
-    border: 0.4px solid #323232;
+    border: 0.4px solid #282830;
     margin-bottom: 0.5em;
     outline:none;
-    background-color: #323232;
+    background-color: #282830;
     color: #D9D9D9;
 }
 
@@ -42,7 +41,7 @@
     font-size: 1em;
     font-weight: 400;
     text-align: center;
-    animation: fadeIn 0.2s;
+    animation: fadeIn 0.5s;
 }
 
 @keyframes fadeIn {
@@ -72,7 +71,7 @@ div:focus-within p{
     cursor: pointer;
 }
 button {
-    background-color: #50555C;
+    background: linear-gradient(59.66deg, #000000 -42.73%, #8C0043 95.78%);
     color: #fff;
     width: 340px;
     padding: 0.6em 0.5em;
@@ -82,21 +81,4 @@ button {
     font-weight: 300;
     cursor: pointer;
     border: none;
-}
-
-button:active {
-    animation: borderanimation 0.5s;
-}
-
-@keyframes borderanimation {
-    from {
-         border: 1px solid grey;
-         background-color: #fff;
-         scale: 1;
-    }
-    to {
-        border: 1px solid grey;
-        background-color: #fff;
-         scale: 0;
-    }
 }

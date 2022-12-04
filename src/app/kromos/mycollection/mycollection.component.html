@@ -1,13 +1,49 @@
-<app-header></app-header>
+
 <div class="container">
-<h1>My Collection</h1>
+<h1><img src="../../../assets/icons/i_mycollection_w.svg"/>My collection</h1>
 <h3>Collection's progress</h3>
+
 <app-progressbar></app-progressbar>
-<button class="boton1">Missing Stickers</button>
-<button class="boton1" routerLink="repeated">Repeated Stickers</button>
-<h2 class="my-4">CATEGORIES</h2>
-<button class="boton2" routerLink="specials">Stadium, specials...</button>
-<button class="boton2" routerLink="countries">Countries</button>
-<button class="boton2" routerLink="timeline">Timeline</button>
+
+<button class="boton1">
+    <img src="../../../assets/icons/i_missing.svg" alt="missing stickers icon">
+    <div class="button-text">
+    <p>Missing Stickers</p>
+    <small>139 missing stickers</small>
+    </div>
+    <img src="../../../assets/icons/i_chevron_right.svg" alt="chevron right icon">
+</button>
+<button class="boton1" routerLink="repeated">
+    <img src="../../../assets/icons/i_duplicate.svg" alt="repeated stickers icon">
+    <div class="button-text">
+    <p>Repeated Stickers</p>
+    <small>78 repeated stickers</small>
+    </div>
+    <img src="../../../assets/icons/i_chevron_right.svg" alt="chevron right icon">
+</button>
+
+
+<h3 class="categories">Categories</h3>
+<button class="boton2" routerLink="specials">
+    <img src="../../../assets/icons/i_stadium.svg" alt="stadium stickers icon">
+    <p>Stadiums, specials...</p>
+    <small>0/19</small>
+    <img src="../../../assets/icons/i_chevron_right.svg" alt="chevron right icon">
+</button>
+<button class="boton2" routerLink="countries">
+    <img src="../../../assets/icons/i_country.svg" alt="stadium stickers icon">
+    <p>Countries</p>
+    <small>0/32</small>
+    <img src="../../../assets/icons/i_chevron_right.svg" alt="chevron right icon">
+</button>
+
+
+<button class="boton2 timeline" routerLink="timeline">
+    <img src="../../../assets/icons/i_timeline.svg" alt="timeline stickers icon">
+    <p>Timeline</p>
+    <small>0/19</small>
+    <img src="../../../assets/icons/i_chevron_right.svg" alt="chevron right icon">
+</button>
+
 </div>
 <app-navbar></app-navbar>

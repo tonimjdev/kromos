@@ -1,11 +1,15 @@
 p {
-    font-size: 0.7em;
+    font-size: 0.8em;
     font-weight: 300;
-    margin-bottom: 0.2em;
-
+    padding: 0.8em 0.4em;
 }
 .container {
-    width: 340px;
+    width: 350px;
+    padding-top: 0.4em;
+}
+.progress {
+    background-color:#282830;
+    border-radius: 15px;
 }
 .progress-bar {
     margin:0;

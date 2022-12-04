@@ -1,5 +1,5 @@
 * {
-    background-color: #1E1E1E;
+    background-color: #0c0c0e;
     color: #D9D9D9;
 }
 .formulario {
@@ -77,7 +77,7 @@ div:focus-within p{
 }
 
 button {
-    background-color: #50555C;
+    background: linear-gradient(59.66deg, #000000 -42.73%, #8C0043 95.78%);
     color: #fff;
     width: 340px;
     padding: 0.6em 0.5em;

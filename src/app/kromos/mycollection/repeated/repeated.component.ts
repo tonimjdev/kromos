@@ -15,6 +15,7 @@ export class RepeatedComponent implements OnInit {
     return this.cardsService.repetidos;
   }
 
+
   ngOnInit(): void {
    this.cardsService.buscarRepetidos();
   }

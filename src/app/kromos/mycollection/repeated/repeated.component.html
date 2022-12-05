@@ -6,22 +6,20 @@
         <span>BACK</span>
     </a>
 </div>
-    <div class="container">
-        <h1>Repeated Stickers</h1>
-    </div>
-    <div class="container">
+ <div class="container pb-2">
+        <h1><img src="../../../../assets/icons/i_duplicate.svg" width="25" alt="repeated icon">
+            Repeated Stickers</h1>
+        </div>
+    <div class="container pt-3">
         <div class="row">
         <div class="card2 mb-3" *ngFor="let repetido of repetidos" 
         [ngStyle]="{'background-image': repetido.color}">
-            
             <h5>
                 {{repetido.card}}
             </h5>
             <p class="numCards">{{repetido.ud - 1}}</p>
         </div>
         </div>
-        </div>
-
-        <div class="espacioBottom"></div>
+    </div>
 
         <app-navbar></app-navbar> 

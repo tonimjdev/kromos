@@ -10,12 +10,16 @@ import { Kromos } from '../../interfaces/kromos.interface';
 })
 export class CountryComponent implements OnInit {
 
+  
+
   constructor( private countriesService: CountriesService,
               private cardsService: CardsService ) { }
 
   get country() {
     return this.countriesService.country
   }
+
+  nombrePag = this.country;
 
   flag:string = `${this.country.toLowerCase().replace(/\s+/g, '')}.svg`;
 

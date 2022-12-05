@@ -4,133 +4,152 @@
         "card":"00",
         "ud": 0,
         "category":"Specials",
-        "color":"radial-gradient(#f20089 0%, #bc00dd 50%, #2d00f7 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":2,
         "card":"FCW1",
         "ud": 0,
         "category":"Specials",
-        "color":"radial-gradient(#f20089 0%, #bc00dd 50%, #2d00f7 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":3,
         "card":"FCW2",
         "ud": 0,
         "category":"Specials",
-        "color":"radial-gradient(#f20089 0%, #bc00dd 50%, #2d00f7 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":4,
         "card":"FCW3",
         "ud": 0,
         "category":"Specials",
-        "color":"radial-gradient(#f20089 0%, #bc00dd 50%, #2d00f7 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":5,
         "card":"FCW4",
         "ud": 0,
         "category":"Specials",
-        "color":"radial-gradient(#f20089 0%, #bc00dd 50%, #2d00f7 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":6,
         "card":"FCW5",
         "ud": 0,
         "category":"Specials",
-        "color":"radial-gradient(#f20089 0%, #bc00dd 50%, #2d00f7 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":7,
         "card":"FCW6",
         "ud": 0,
         "category":"Specials",
-        "color":"radial-gradient(#f20089 0%, #bc00dd 50%, #2d00f7 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":8,
         "card":"FCW7",
         "ud": 0,
         "category":"Stadiums",
-        "color":"radial-gradient(#2d00f7 0%, #bc00dd 50%, #f20089 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":9,
         "card":"FCW8",
         "ud": 0,
         "category":"Stadiums",
-        "color":"radial-gradient(#2d00f7 0%, #bc00dd 50%, #f20089 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":10,
         "card":"FCW9",
         "ud": 0,
         "category":"Stadiums",
-        "color":"radial-gradient(#2d00f7 0%, #bc00dd 50%, #f20089 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":11,
         "card":"FCW10",
         "ud": 0,
         "category":"Stadiums",
-        "color":"radial-gradient(#2d00f7 0%, #bc00dd 50%, #f20089 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":12,
         "card":"FCW11",
         "ud": 0,
         "category":"Stadiums",
-        "color":"radial-gradient(#2d00f7 0%, #bc00dd 50%, #f20089 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":13,
         "card":"FCW12",
         "ud": 0,
         "category":"Stadiums",
-        "color":"radial-gradient(#2d00f7 0%, #bc00dd 50%, #f20089 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":14,
         "card":"FCW13",
         "ud": 0,
         "category":"Stadiums",
-        "color":"radial-gradient(#2d00f7 0%, #bc00dd 50%, #f20089 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":15,
         "card":"FCW14",
         "ud": 0,
         "category":"Stadiums",
-        "color":"radial-gradient(#2d00f7 0%, #bc00dd 50%, #f20089 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":16,
         "card":"FCW15",
         "ud": 0,
         "category":"Stadiums",
-        "color":"radial-gradient(#2d00f7 0%, #bc00dd 50%, #f20089 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":17,
         "card":"FCW16",
         "ud": 0,
         "category":"Stadiums",
-        "color":"radial-gradient(#2d00f7 0%, #bc00dd 50%, #f20089 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":18,
         "card":"FCW17",
         "ud": 0,
         "category":"Stadiums",
-        "color":"radial-gradient(#2d00f7 0%, #bc00dd 50%, #f20089 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":19,
         "card":"FCW18",
         "ud": 0,
         "category":"Specials",
-        "color":"radial-gradient(#f20089 0%, #bc00dd 50%, #2d00f7 80%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":20,
@@ -156,7 +175,8 @@
     },
     {
         "id":23,
-        "card":"QAT4","ud": 0,
+        "card":"QAT4",
+        "ud": 0,
         "category":"Countries",
         "country":"Qatar"
     },

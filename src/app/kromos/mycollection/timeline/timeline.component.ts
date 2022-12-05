@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimelineComponent implements OnInit {
 
+  nombrePag = "timeline";
+  
   constructor() { }
 
   ngOnInit(): void {

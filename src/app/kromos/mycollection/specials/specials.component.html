@@ -3,30 +3,48 @@
     <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M9.60938 20.9961C9.86719 21.2539 10.1953 21.3945 10.582 21.3945C11.3555 21.3945 11.9766 20.7852 11.9766 20.0117C11.9766 19.625 11.8125 19.2734 11.543 19.0039L3.33984 10.9883L11.543 2.99609C11.8125 2.72656 11.9766 2.36328 11.9766 1.98828C11.9766 1.21484 11.3555 0.605469 10.582 0.605469C10.1953 0.605469 9.86719 0.746094 9.60938 1.00391L0.492188 9.91016C0.164062 10.2148 0.0117188 10.5898 0 11C0 11.4102 0.164062 11.7617 0.492188 12.0781L9.60938 20.9961Z" fill="#50555C"/>
     </svg>
-    <span>BACK</span>
+    <span>Back</span>
 </a>
 </div>
 <div class="container">
-<h1>Special cards</h1>
+<h1><img src="../../../../assets/icons/i_stadium.svg" alt="stadium icon">
+    Special cards</h1>
 <h3>Collection's progress</h3>
-<app-progressbar></app-progressbar>
+<app-progressbar #progressB [pagName]="nombrePag" [totalSpc]="totalEspeciales"></app-progressbar>
 
 <h4>Special & Stadiums</h4>
 </div>
 <div class="container pt-3 stickers">
 <div class="row">
 <div class="card2 mb-3" *ngFor="let special of specials" (click)="cartaSel(special.id)"
-      [ngStyle]="{'background-image': special.color}" >
-    <div class="resta" (click)="resta(special.id)">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="29" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-          </svg>
-    </div>
-    <h5>
+      
+      [ngStyle]="special.ud>0 ? {'background-image': special.color} : {'background-image': special.color2} ">
+
+      <div class="duplicate" *ngIf="special.ud > 1">
+        <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.149 5.48975H3.13306C1.955 5.48975 1 6.39895 1 7.52052V16.9692C1 18.0908 1.955 19 3.13306 19H10.149C11.327 19 12.282 18.0908 12.282 16.9692V7.52052C12.282 6.39895 11.327 5.48975 10.149 5.48975Z" stroke="#E4E4E4" stroke-miterlimit="10"/>
+            <path d="M6.3606 4.07322V2.50489C6.3606 1.67251 7.00734 1 7.80239 1H15.1038C15.9012 1 16.5455 1.67504 16.5455 2.50489V12.8665C16.5455 13.6989 15.8988 14.3714 15.1038 14.3714H14.0194" stroke="#E4E4E4" stroke-miterlimit="10"/>
+            </svg>
+      </div>
+
+      <h5>
         {{special.card}}
     </h5>
+
+    <div class="logicaCards">
+
+    <div class="resta" (click)="resta(special.id)">
+        -
+    </div>
+    
     <p class="numCards">{{special.ud}}</p>
+
+    <div class="suma">
+        +
+    </div>
+
+
+</div>
 </div>
 </div>
 </div>

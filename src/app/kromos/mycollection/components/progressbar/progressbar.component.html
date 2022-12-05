@@ -2,11 +2,10 @@
   <div class="progress">
     <div class="progress-bar" 
     role="progressbar" 
-    aria-label="Example with label" 
-    style="width: 50%; background:#6B0034;" 
-    aria-valuenow="50" 
+    aria-label="With label"
+    [style.width.%]="porcentaje"
     aria-valuemin="0" 
-    aria-valuemax="100">50%</div>
+    aria-valuemax="100">{{porcentaje}}%</div>
   </div>
-  <p>167/670 stickers</p>
+  <p>{{parcial}}/{{total}} stickers</p>
 </div>

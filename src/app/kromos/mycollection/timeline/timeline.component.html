@@ -3,15 +3,49 @@
         <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9.60938 20.9961C9.86719 21.2539 10.1953 21.3945 10.582 21.3945C11.3555 21.3945 11.9766 20.7852 11.9766 20.0117C11.9766 19.625 11.8125 19.2734 11.543 19.0039L3.33984 10.9883L11.543 2.99609C11.8125 2.72656 11.9766 2.36328 11.9766 1.98828C11.9766 1.21484 11.3555 0.605469 10.582 0.605469C10.1953 0.605469 9.86719 0.746094 9.60938 1.00391L0.492188 9.91016C0.164062 10.2148 0.0117188 10.5898 0 11C0 11.4102 0.164062 11.7617 0.492188 12.0781L9.60938 20.9961Z" fill="#50555C"/>
         </svg>
-        <span>BACK</span>
+        <span>Back</span>
     </a>
     </div>
     <div class="container">
     <h1><img src="../../../../assets/icons/i_timeline.svg" alt="timeline icon">
-        Timeline cards</h1>
+        Timeline</h1>
     <h3>Collection's progress</h3>
-    <app-progressbar [pagName]="nombrePag"></app-progressbar>
-    
-    </div>
+    <app-progressbar #progressB [pagName]="nombrePag"></app-progressbar>
+    <h4></h4>
+</div>
+    <div class="container stickers">
+        <div class="row">
+        <div class="card2 mb-3" *ngFor="let historica of timeline" (click)="cartaSel(historica.id)"
+              
+              [ngStyle]="historica.ud>0 ? {'background-image': historica.color} : {'background-image': historica.color2} ">
+        
+              <div class="duplicate" *ngIf="historica.ud > 1">
+                <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.149 5.48975H3.13306C1.955 5.48975 1 6.39895 1 7.52052V16.9692C1 18.0908 1.955 19 3.13306 19H10.149C11.327 19 12.282 18.0908 12.282 16.9692V7.52052C12.282 6.39895 11.327 5.48975 10.149 5.48975Z" stroke="#E4E4E4" stroke-miterlimit="10"/>
+                    <path d="M6.3606 4.07322V2.50489C6.3606 1.67251 7.00734 1 7.80239 1H15.1038C15.9012 1 16.5455 1.67504 16.5455 2.50489V12.8665C16.5455 13.6989 15.8988 14.3714 15.1038 14.3714H14.0194" stroke="#E4E4E4" stroke-miterlimit="10"/>
+                    </svg>
+              </div>
+        
+              <h5>
+                {{historica.card}}
+            </h5>
+        
+            <div class="logicaCards">
+        
+            <div class="resta" (click)="resta(historica.id)">
+                -
+            </div>
+            
+            <p class="numCards">{{historica.ud}}</p>
+        
+            <div class="suma">
+                +
+            </div>
+        
+        
+        </div>
+        </div>
+        </div>
+        </div>
 
 <app-navbar></app-navbar>

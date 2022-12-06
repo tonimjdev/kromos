@@ -1,15 +1,21 @@
+.container {
+    background-color: #0C0C0E;
+    color: #D9D9D9;
+}
+
 .header {
-    margin: 1.5em 1em;   
+    padding: 1.5em 1em; 
+    background-color: #0C0C0E;
+    color: #D9D9D9;  
 }
 
 .header span {
     margin-left: 0.3em;
 }
 
-
 .header a {
     margin-left: 0.6em;
-    color: #000;
+    color: #D9D9D9; 
     text-decoration: none;
 }
 
@@ -44,7 +50,7 @@ h3 {
     font-weight: 300;
 }
 .boton2 {
-    background-color: #50555C;
+    background-color: #14141F;
     color: #fff;
     width: 320px;
     padding: 0.3em 1em;

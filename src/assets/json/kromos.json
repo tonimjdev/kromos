@@ -157,139 +157,419 @@
         "ud": 0,
         "category":"Countries",
         "country":"Qatar",
-        "color": "linear-gradient(#03071e 10%, #d00000 60%, #ffba08 90%)"
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":21,
         "card":"QAT2",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":22,
         "card":"QAT3",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":23,
         "card":"QAT4",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":24,
         "card":"QAT5",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":25,
         "card":"QAT6",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":26,
         "card":"QAT7",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":27,
         "card":"QAT8",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":28,
         "card":"QAT9",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":29,
         "card":"QAT10",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":30,
         "card":"QAT11",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":31,
         "card":"QAT12",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":32,
         "card":"QAT13",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":33,
         "card":"QAT14",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":34,
         "card":"QAT15",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":35,
         "card":"QAT16",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":36,
         "card":"QAT17",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":37,
         "card":"QAT18",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":38,
         "card":"QAT19",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     },
     {
         "id":39,
         "card":"QAT20",
         "ud": 0,
         "category":"Countries",
-        "country":"Qatar"
+        "country":"Qatar",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
+    },
+    {
+        "id":40,
+        "card":"ECU1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Ecuador"
+    },
+    {
+        "id":60,
+        "card":"SEN1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Senegal"
+    },
+    {
+        "id":80,
+        "card":"NED1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Netherlands"
+    },
+    {
+        "id":100,
+        "card":"ENG1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"England"
+    },
+    {
+        "id":120,
+        "card":"IRN1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Iran"
+    },
+    {
+        "id":140,
+        "card":"USA1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"USA"
+    },
+    {
+        "id":160,
+        "card":"WAL1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Wales"
+    },
+    {
+        "id":180,
+        "card":"ARG1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Argentina"
+    },
+    {
+        "id":200,
+        "card":"KSA1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Saudi Arabia"
+    },
+    {
+        "id":220,
+        "card":"MEX1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Mexico"
+    },
+    {
+        "id":240,
+        "card":"POL1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Poland"
+    },
+    {
+        "id":260,
+        "card":"FRA1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"France"
+    },
+    {
+        "id":280,
+        "card":"AUS1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Australia"
+    },
+    {
+        "id":300,
+        "card":"DEN1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Denmark"
+    },
+    {
+        "id":320,
+        "card":"TUN1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Tunisia"
+    },
+    {
+        "id":340,
+        "card":"ESP1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Spain"
+    },
+    {
+        "id":360,
+        "card":"CRC1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Costa Rica"
+    },
+    {
+        "id":380,
+        "card":"GER1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Germany"
+    },
+    {
+        "id":400,
+        "card":"JPN1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Japan"
+    },
+    {
+        "id":420,
+        "card":"BEL1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Belgium"
+    },
+    {
+        "id":440,
+        "card":"CAN1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Canada"
+    },
+    {
+        "id":460,
+        "card":"MAR1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Morocco"
+    },
+    {
+        "id":480,
+        "card":"CRO1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Croatia"
+    },
+    {
+        "id":500,
+        "card":"BRA1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Brazil"
+    },
+    {
+        "id":520,
+        "card":"SRB1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Serbia"
+    },
+    {
+        "id":540,
+        "card":"SUI1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Switzerland"
+    },
+    {
+        "id":560,
+        "card":"CMR1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Cameroon"
+    },
+    {
+        "id":580,
+        "card":"POR1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Portugal"
+    },
+    {
+        "id":600,
+        "card":"GHA1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Ghana"
+    },
+    {
+        "id":620,
+        "card":"URU1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"Uruguay"
+    },
+    {
+        "id":640,
+        "card":"KOR1",
+        "ud": 0,
+        "category":"Countries",
+        "country":"South Korea"
+    },
+    {
+        "id":660,
+        "card":"FCW19",
+        "ud": 0,
+        "category":"Timeline",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
+    },
+    {
+        "id":661,
+        "card":"FCW20",
+        "ud": 0,
+        "category":"Timeline",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
+    },
+    {
+        "id":662,
+        "card":"FCW21",
+        "ud": 0,
+        "category":"Timeline",
+        "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)",
+        "color2":"linear-gradient(188.51deg, rgba(154, 0, 74, 0.2) 11.08%, rgba(33, 14, 23, 0.2) 93.49%)"
     }
 ]

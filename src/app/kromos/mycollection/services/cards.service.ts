@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Kromos } from '../interfaces/kromos.interface';
 // Importamos coleccion JSON
-let kromosJson = require('../../../../assets/json/kromos.json')
+let kromosJson = require('../../../../assets/json/kromos.json');
 
 @Injectable({
   providedIn: 'root'
@@ -28,15 +28,17 @@ country:Kromos[]=[];
 sumarCartas( id:number ) {
     let cardIndex = this.todos.findIndex(x => x.id === id);
     this.todos[cardIndex].ud++;
-    console.log(this.todos);
-    console.log('kromosJson: ', kromosJson);
+    this.buscarFaltantes();
+    console.log('this.todos', this.todos);
 }
 
 restarCartas ( id:number ) {
     let cardIndex = this.todos.findIndex(x => x.id === id);
     if ( this.todos[cardIndex].ud > 0 ) {
     this.todos[cardIndex].ud = this.todos[cardIndex].ud - 2;
+    this.buscarFaltantes();
     } else return;
+
 }
 
 buscarRepetidos() {
@@ -44,9 +46,18 @@ buscarRepetidos() {
     console.log('this.repetidos servicio', this.repetidos);
 }
 
+buscarFaltantes() {
+  this.faltantes = this.todos.filter(x => x.ud === 0);
+  console.log('this.faltantes ', this.faltantes);
+}
+
 udsRepetidos() {
   this.buscarRepetidos();
   return this.repetidos;
+}
+udsFaltantes() {
+  this.buscarFaltantes();
+  return this.faltantes;
 }
 
 udsSpecials() {

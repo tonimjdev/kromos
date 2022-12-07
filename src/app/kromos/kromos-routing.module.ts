@@ -6,6 +6,7 @@ import { SpecialsComponent } from './mycollection/specials/specials.component';
 import { TimelineComponent } from './mycollection/timeline/timeline.component';
 import { CountryComponent } from './mycollection/countries/country/country.component';
 import { RepeatedComponent } from './mycollection/repeated/repeated.component';
+import { MissingComponent } from './mycollection/missing/missing.component';
 
 const routes: Routes = [
 
@@ -13,6 +14,7 @@ const routes: Routes = [
     path: '',
     children: [
       { path: '', component: MycollectionComponent, },
+      { path: 'missing', component: MissingComponent, },
       { path: 'repeated', component: RepeatedComponent, },
       { path: 'specials', component: SpecialsComponent, },
       { path: 'countries', component: CountriesComponent, },

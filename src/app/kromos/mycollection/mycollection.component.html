@@ -6,11 +6,11 @@
 <app-progressbar [pagName]="nombrePag" [totalSpc]="totalEspeciales"
                 [totalCntr]="totalPaises" [totalTiml]="totalHistoricos"></app-progressbar>
 
-<button class="boton1">
+<button class="boton1" routerLink="missing">
     <img src="../../../assets/icons/i_missing.svg" alt="missing stickers icon">
     <div class="button-text">
     <p>Missing Stickers</p>
-    <small>139 missing stickers</small>
+    <small>{{totalFaltantes}} missing stickers</small>
     </div>
     <img src="../../../assets/icons/i_chevron_right.svg" alt="chevron right icon">
 </button>

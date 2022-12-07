@@ -14,6 +14,7 @@ import { CountriesComponent } from './mycollection/countries/countries.component
 import { TimelineComponent } from './mycollection/timeline/timeline.component';
 import { CountryComponent } from './mycollection/countries/country/country.component';
 import { RepeatedComponent } from './mycollection/repeated/repeated.component';
+import { MissingComponent } from './mycollection/missing/missing.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { RepeatedComponent } from './mycollection/repeated/repeated.component';
     CountriesComponent,
     TimelineComponent,
     CountryComponent,
-    RepeatedComponent
+    RepeatedComponent,
+    MissingComponent
   ],
   imports: [
     CommonModule,

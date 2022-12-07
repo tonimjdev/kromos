@@ -12,6 +12,7 @@ export class MycollectionComponent implements OnInit {
   
   constructor( private cardsService: CardsService ) { }
  
+  totalFaltantes:number = this.cardsService.udsFaltantes().length;
   totalRepes:number = this.cardsService.udsRepetidos().length;
 
   totalSpecials:number = this.cardsService.udsSpecials().length;

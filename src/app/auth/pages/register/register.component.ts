@@ -1,23 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { LocationService } from '../../services/location.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
 
   submit: boolean = false;
   datosNoValidos: boolean = false;
   messageError: string = '';
+  latitud?:number;
+  longitud?:number;
 
   constructor( private fb: FormBuilder,
                 private router: Router,
-                private authService: AuthService ) { }
+                private authService: AuthService,
+                private locationService: LocationService) { }
 
+  
+
+  // Geolocalización usuario
+  getLocation() {
+    this.locationService.getPosition().then(pos => {
+        this.latitud = pos.lat;
+        this.longitud = pos.lng;
+    });
+  }
   // Validador datos cruzados (match de passwords)*****
   passwordMatch: 
   ValidatorFn = (control: AbstractControl): 
@@ -27,7 +40,7 @@ export class RegisterComponent {
 
   return password && confirmPassword && password.value !== confirmPassword.value ? 
   { passwordMatch: true } : null;
-};
+  };
 
   miFormulario: FormGroup = this.fb.group ({
     name: ['Toni', [Validators.required ]],
@@ -51,7 +64,9 @@ export class RegisterComponent {
     } else if(!this.miFormulario.valid) { return;
   } else {
     const { name, email, password } = this.miFormulario.value;
-    this.authService.registro( name, email,password )
+    const latitude = this.latitud!;
+    const longitude = this.longitud!;
+    this.authService.registro( name, email, password, latitude, longitude )
     .subscribe( ok => {
       if ( ok === true ) {
         this.router.navigateByUrl('/mycollection');
@@ -62,4 +77,12 @@ export class RegisterComponent {
     });
   }
 }
+
+
+
+
+ngOnInit(): void {
+  this.getLocation();
+}
+
 }

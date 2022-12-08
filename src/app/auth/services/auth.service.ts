@@ -22,10 +22,10 @@ export class AuthService {
 
   constructor( private http: HttpClient ) { }
 
-  registro(name: string, email:string, password:string ){
+  registro(name: string, email:string, password:string, latitude:number, longitude:number ){
 
     const url = `${ this.baseUrl }/auth/new`;
-    const body = { email, password, name };
+    const body = { email, password, name, latitude, longitude };
 
     return this.http.post<AuthResponse>( url, body )
     .pipe(

@@ -12,7 +12,7 @@
         {{country}}
     </h1>
     <h3>Collection's progress</h3>
-    <app-progressbar [pagName]="nombrePag"></app-progressbar>
+    <app-progressbar #progressB [pagName]="nombrePag" [totalCntr]="totalPais"></app-progressbar>
 
     <h4></h4>
 </div>
@@ -20,7 +20,7 @@
 
     <div class="container stickers">
         <div class="row">
-        <div class="card2 mb-3" *ngFor="let cartaPais of cartaspaisElegido" (click)="cartaSel(cartaPais.id)"
+        <div class="card2 mb-3" *ngFor="let cartaPais of cartaspaisElegido" (click)="cartaSel(cartaPais.id)" (click)="progressB.calculos()"
         [ngStyle]="cartaPais.ud>0 ? {'background-image': cartaPais.color} : {'background-image': cartaPais.color2} ">
   
         <div class="duplicate" *ngIf="cartaPais.ud > 1">

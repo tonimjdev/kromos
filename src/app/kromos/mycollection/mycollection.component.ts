@@ -15,16 +15,13 @@ export class MycollectionComponent implements OnInit {
   totalFaltantes:number = this.cardsService.udsFaltantes().length;
   totalRepes:number = this.cardsService.udsRepetidos().length;
 
-  totalSpecials:number = this.cardsService.udsSpecials().length;
-  totalCountries:number = this.cardsService.udsCountries().length;
-  totalTimeline:number = this.cardsService.udsTimeline().length;
-
-  totalEspeciales:number = this.totalSpecials;
-  totalPaises:number = this.totalCountries;
-  totalHistoricos:number = this.totalTimeline;
+  totalEspeciales:number = this.cardsService.udsSpecials().length;
+  totalPaises:number = this.cardsService.udsCountries().length;
+  totalHistoricos:number = this.cardsService.udsTimeline().length;
   
 
   ngOnInit(): void {
+
   }
 
 }

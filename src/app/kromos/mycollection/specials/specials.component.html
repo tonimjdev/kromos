@@ -16,7 +16,7 @@
 </div>
 <div class="container stickers">
 <div class="row">
-<div class="card2 mb-3" *ngFor="let special of specials" (click)="cartaSel(special.id)"
+<div class="card2 mb-3" *ngFor="let special of specials" (click)="cartaSel(special.id)" (click)="progressB.calculos()"
       
       [ngStyle]="special.ud>0 ? {'background-image': special.color} : {'background-image': special.color2} ">
 

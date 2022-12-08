@@ -12,8 +12,7 @@ export class TimelineComponent implements OnInit {
   
   constructor( private cardsService: CardsService ) {  }
 
-  totalTimelines:number = this.cardsService.udsTimeline().length;
-  totalHistoricas:number = this.totalTimelines;
+  totalHistoricas:number = this.cardsService.udsTimeline().length;
 
   ngOnInit(): void {
   }
@@ -25,7 +24,6 @@ export class TimelineComponent implements OnInit {
 
   cartaSel( id:number ) {
     this.cardsService.sumarCartas(id);
-    this.nombrePag = "Timeline";
   }
 
 

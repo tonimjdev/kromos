@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CardsService } from '../../services/cards.service';
 
 @Component({
   selector: 'app-progressbar',
@@ -10,15 +11,23 @@ export class ProgressbarComponent implements OnInit {
   @Input() pagName!:string;
   @Input() totalSpc!:number;
   @Input() totalCntr!:number;
+  @Input() totalCntrs!:number;
   @Input() totalTiml!:number;
+
 
   parcial:number = 0;
   total:number = 0;
   porcentaje:number = 0;
 
   calculos() {
+
+    this.totalSpc = this.cardsService.udsSpecials().length;
+    this.totalCntr = this.cardsService.udsCountry(this.pagName).length;
+    this.totalTiml = this.cardsService.udsTimeline().length;
+
+    console.log('inicio funcion calculos, totalSpc,', this.totalSpc);
     if (this.pagName === "MyCollection") {
-      this.parcial = this.totalSpc + this.totalCntr + this.totalTiml; this.total = 670;
+      this.parcial = this.totalSpc + this.totalCntrs + this.totalTiml; this.total = 670;
       this.porcentaje = Math.round((this.parcial/this.total)*100);
     } else if (this.pagName === "Specials") {
       this.parcial = this.totalSpc; this.total = 19;
@@ -30,19 +39,11 @@ export class ProgressbarComponent implements OnInit {
       this.parcial = this.totalCntr; this.total = 20;
       this.porcentaje = Math.round((this.parcial/this.total)*100);
     }
-    console.log('Parcial', this.parcial);
-    console.log('Total', this.total);
-    console.log('Porcentaje', this.porcentaje);
   }
   
-  constructor() { }
+  constructor( private cardsService: CardsService ) { }
 
   ngOnInit(): void {
-
-    console.log('pagName',this.pagName);
-    console.log('totalSpc',this.totalSpc);
-    console.log('totalCntrl',this.totalCntr);
-    console.log('totalTimln',this.totalTiml);
 
     this.calculos()
   }

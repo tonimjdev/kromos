@@ -13,12 +13,11 @@ export class SpecialsComponent implements OnInit {
 
   constructor( private cardsService: CardsService ) {  }
 
-  totalSpecials:number = this.cardsService.udsSpecials().length;
-  totalEspeciales:number = this.totalSpecials;
+  totalEspeciales:number = this.cardsService.udsSpecials().length;
 
   ngOnInit(): void {
   }
-
+  
   get specials() {
     return this.cardsService.specials;
   }
@@ -26,7 +25,6 @@ export class SpecialsComponent implements OnInit {
 
   cartaSel( id:number ) {
     this.cardsService.sumarCartas(id);
-    this.nombrePag = "Specials";
   }
 
 

@@ -20,6 +20,8 @@ export class CountryComponent implements OnInit {
   }
 
   nombrePag = this.country;
+  totalPais:number = this.cardsService.udsCountry(this.country).length;
+
 
   flag:string = `${this.country.toLowerCase().replace(/\s+/g, '')}.svg`;
 

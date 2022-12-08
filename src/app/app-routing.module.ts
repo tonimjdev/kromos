@@ -16,7 +16,31 @@ const routes: Routes = [
   },
   {
     path: 'mycollection',
-    loadChildren: () => import('./kromos/kromos.module').then( m => m.KromosModule ),
+    loadChildren: () => import('./kromos/mycollection/mycollection.module').then( m => m.MycollectionModule ),
+    canActivate: [ ValidarTokenGuard ],
+    canLoad: [ ValidarTokenGuard ]
+  },
+  {
+    path: 'trends',
+    loadChildren: () => import('./kromos/trends/trends.module').then( m => m.TrendsModule ),
+    canActivate: [ ValidarTokenGuard ],
+    canLoad: [ ValidarTokenGuard ]
+  },
+  {
+    path: 'matchs',
+    loadChildren: () => import('./kromos/matchs/matchs.module').then( m => m.MatchsModule ),
+    canActivate: [ ValidarTokenGuard ],
+    canLoad: [ ValidarTokenGuard ]
+  },
+  {
+    path: 'messages',
+    loadChildren: () => import('./kromos/messages/messages.module').then( m => m.MessagesModule ),
+    canActivate: [ ValidarTokenGuard ],
+    canLoad: [ ValidarTokenGuard ]
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./kromos/profile/profile.module').then( m => m.ProfileModule ),
     canActivate: [ ValidarTokenGuard ],
     canLoad: [ ValidarTokenGuard ]
   },

@@ -33,12 +33,16 @@ nav ul {
 .messages {
     padding-top: 0.7em;
 }
-.profil {
+.profile {
     padding-top: 0.7em;
 }
 .activo {
     color: #fff;
 }
-.activo svg path {
+.fill .activo svg path {
     fill:#fff;
+}
+.match .activo svg path {
+    stroke:#fff;
+    stroke-width: 0.8;
 }

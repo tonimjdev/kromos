@@ -50,7 +50,7 @@ h3 {
     font-weight: 300;
 }
 .boton2 {
-    background-color: #14141F;
+    background: linear-gradient(271.54deg, #20203A -0.97%, #0E0E16 88.94%);
     color: #fff;
     width: 320px;
     padding: 0.3em 1em;
@@ -89,4 +89,5 @@ h3 {
 
 .espacioBottom {
     height: 100px;
+    background-color: #0C0C0E;
 }

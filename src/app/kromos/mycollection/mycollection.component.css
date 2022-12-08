@@ -20,7 +20,7 @@ h3 {
     display: flex;
     flex-direction:row;
     gap: 0.6em;
-    background-color: #14141F;
+    background: linear-gradient(271.54deg, #20203A -0.97%, #0E0E16 88.94%);
     color: #D9D9D9;
     width: 340px;
     border-radius: 10px;
@@ -49,7 +49,7 @@ h3 {
 .boton2 {
     display: flex;
     flex-direction:row;
-    background-color: #14141F;
+    background: linear-gradient(59.66deg, #000000 -42.73%, #8C0043 95.78%);
     color: #D9D9D9;
     width: 340px;
     border-radius: 10px;

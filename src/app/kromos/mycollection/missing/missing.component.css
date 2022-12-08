@@ -61,3 +61,7 @@ h1 {
     padding-left: 1.5em;
     padding-right: 1.5em;
 }
+.espacioBottom {
+    height: 90px;
+    background-color: #0C0C0E;
+}

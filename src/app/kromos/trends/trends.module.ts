@@ -5,11 +5,13 @@ import { SharedModule } from '../../shared/shared.module';
 import { TrendsRoutingModule } from './trends-routing.module';
 
 import { TrendsComponent } from './trends.component';
+import { TrendsrankingComponent } from './components/trendsranking/trendsranking.component';
 
 
 @NgModule({
   declarations: [
-    TrendsComponent
+    TrendsComponent,
+    TrendsrankingComponent
   ],
   imports: [
     CommonModule,

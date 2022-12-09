@@ -1,0 +1,13 @@
+
+
+<div class="container">
+    <div class="ranking">
+        <div class="listado" *ngFor="let card of trendsRanking; let i=index">
+            <div class="fila">
+                <div class="indice">#{{i+4}}</div>
+                <div class="flag"> <img src="../../../../../assets/flags/{{card.flag}}" alt="flag" width="22">  </div>
+                <div class="nameCard">{{card.card}}</div>
+            </div>
+        </div>
+    </div>
+</div>

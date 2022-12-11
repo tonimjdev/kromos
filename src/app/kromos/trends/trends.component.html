@@ -9,9 +9,9 @@
     <div class="winnerStickers">
         <div class="two">
             <h2>#2</h2>
-            <div class="card2">
+            <div class="card2" [ngStyle]="{'background-image': trendsRanking[1].color}">
 
-                <div class="missing">
+                <div class="trends">
                     <svg width="18" height="18" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="18.255" cy="20.0282" r="9.64151" stroke="#E4E4E4"/>
                         <path d="M18.5822 13.8829C17.1101 13.6075 13.8713 13.993 12.6936 17.7382" stroke="#E4E4E4" stroke-linecap="round"/>
@@ -20,14 +20,14 @@
                         </svg>
                   </div>
 
-                <h5>FCW2</h5>
+                <h5>{{trendsRanking[1].card}}</h5>
             </div>
         </div>
         <div class="one">
             <h2>#1</h2>
-            <div class="card2">
+            <div class="card2" [ngStyle]="{'background-image': trendsRanking[0].color}">
 
-                <div class="missing">
+                <div class="trends">
                     <svg width="18" height="18" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="18.255" cy="20.0282" r="9.64151" stroke="#E4E4E4"/>
                         <path d="M18.5822 13.8829C17.1101 13.6075 13.8713 13.993 12.6936 17.7382" stroke="#E4E4E4" stroke-linecap="round"/>
@@ -36,14 +36,14 @@
                         </svg>
                   </div>
 
-                <h5>FCW1</h5>
+                <h5>{{trendsRanking[0].card}}</h5>
             </div>
         </div>
         <div class="three">
             <h2>#3</h2>
-            <div class="card2">
+            <div class="card2" [ngStyle]="{'background-image': trendsRanking[2].color}">
 
-                <div class="missing">
+                <div class="trends">
                     <svg width="18" height="18" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="18.255" cy="20.0282" r="9.64151" stroke="#E4E4E4"/>
                         <path d="M18.5822 13.8829C17.1101 13.6075 13.8713 13.993 12.6936 17.7382" stroke="#E4E4E4" stroke-linecap="round"/>
@@ -52,7 +52,7 @@
                         </svg>
                   </div>
 
-                <h5>FCW3</h5>
+                <h5>{{trendsRanking[2].card}}</h5>
             </div>
         </div>
     </div>

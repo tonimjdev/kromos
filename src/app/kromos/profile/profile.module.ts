@@ -5,6 +5,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { ProfileRoutingModule } from './profile-routing.module';
 
 import { ProfileComponent } from './profile.component';
+import { MycollectionModule } from '../mycollection/mycollection.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ProfileComponent } from './profile.component';
   imports: [
     CommonModule,
     SharedModule,
-    ProfileRoutingModule
+    ProfileRoutingModule,
+    MycollectionModule
   ]
 })
 export class ProfileModule { }

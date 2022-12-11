@@ -15,7 +15,7 @@ export class LoginComponent {
   messageError: string = '';
 
   miFormulario: FormGroup = this.fb.group ({
-    email: ['toni@hola.es', [Validators.required, Validators.email]],
+    email: ['alex@hola.es', [Validators.required, Validators.email]],
     password: ['123456', [Validators.required, Validators.minLength(6)]],
 
   });

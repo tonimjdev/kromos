@@ -26,7 +26,7 @@ export class ProgressbarComponent implements OnInit {
     this.totalTiml = this.cardsService.udsTimeline().length;
 
     console.log('inicio funcion calculos, totalSpc,', this.totalSpc);
-    if (this.pagName === "MyCollection") {
+    if (this.pagName === "MyCollection" || this.pagName === "Profile") {
       this.parcial = this.totalSpc + this.totalCntrs + this.totalTiml; this.total = 670;
       this.porcentaje = Math.round((this.parcial/this.total)*100);
     } else if (this.pagName === "Specials") {

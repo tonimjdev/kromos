@@ -31,6 +31,9 @@ import { MissingComponent } from './missing/missing.component';
     CommonModule,
     SharedModule,
     MycollectionRoutingModule
+  ],
+  exports: [
+    ProgressbarComponent
   ]
 })
 export class MycollectionModule { }

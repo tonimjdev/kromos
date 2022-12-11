@@ -69,7 +69,10 @@ export class AuthService {
           this._usuario = {
             name: resp.name!,
             uid: resp.uid!,
-            email: resp.email!
+            email: resp.email!,
+            latitude: resp.latitude!,
+            longitude: resp.longitude!,
+            picture: resp.picture!
           }
         return resp.ok;
       }),

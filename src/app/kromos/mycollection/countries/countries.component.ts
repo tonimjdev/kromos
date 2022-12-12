@@ -73,6 +73,49 @@ export class CountriesComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.cardsService.getFromLocalStorage('coleccion');
+
+
+      // Group A
+  this.Qatar = this.cPais('Qatar');
+  this.Ecuador = this.cPais('Ecuador');
+  this.Senegal = this.cPais('Senegal');
+  this.Netherlands = this.cPais('Netherlands');
+  // Group B
+  this.England = this.cPais('England');
+  this.Iran = this.cPais('Iran');
+  this.USA = this.cPais('USA');
+  this.Wales = this.cPais('Wales');
+  // Group C
+  this.Argentina = this.cPais('Argentina');
+  this.SaudiArabia = this.cPais('Saudi Arabia');
+  this.Mexico = this.cPais('Mexico');
+  this.Poland = this.cPais('Poland');
+  // Group D
+  this.France = this.cPais('France');
+  this.Australia = this.cPais('Australia');
+  this.Denmark = this.cPais('Denmark');
+  this.Tunisia = this.cPais('Tunisia');
+  // Group E
+  this.Spain = this.cPais('Spain');
+  this.CostaRica = this.cPais('Costa Rica');
+  this.Germany = this.cPais('Germany');
+  this.Japan = this.cPais('Japan');
+  // Group F
+  this.Belgium = this.cPais('Belgium');
+  this.Canada = this.cPais('Canada');
+  this.Morocco = this.cPais('Morocco');
+  this.Croatia = this.cPais('Croatia');
+  // Group G
+  this.Brazil = this.cPais('Brazil');
+  this.Serbia = this.cPais('Serbia');
+  this.Switzerland = this.cPais('Switzerland');
+  this.Cameroon = this.cPais('Cameroon');
+  // Group H
+  this.Portugal = this.cPais('Portugal');
+  this.Ghana = this.cPais('Ghana');
+  this.Uruguay = this.cPais('Uruguay');
+  this.SouthKorea = this.cPais('South Korea');
   }
 
 }

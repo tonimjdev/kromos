@@ -7,9 +7,9 @@ import { AppComponent } from './app.component';
 import { SharedModule } from "./shared/shared.module";
 import { MycollectionModule } from './kromos/mycollection/mycollection.module';
 import { TrendsModule } from './kromos/trends/trends.module';
-import { MatchsModule } from './kromos/matchs/matchs.module';
 import { MessagesModule } from './kromos/messages/messages.module';
 import { ProfileModule } from './kromos/profile/profile.module';
+import { MatchsModule } from './kromos/matchs/matchs.module';
 
 
 @NgModule({
@@ -23,9 +23,9 @@ import { ProfileModule } from './kromos/profile/profile.module';
         HttpClientModule,
         MycollectionModule,
         TrendsModule,
-        MatchsModule,
         MessagesModule,
-        ProfileModule
+        ProfileModule,
+        MatchsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

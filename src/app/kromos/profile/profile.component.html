@@ -26,7 +26,12 @@
         <div class="email">
         <p>Email address</p>
         <p class="info">{{usuario.email}}</p>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="icon me-4"></div>
+        </div>
+        <div class="email">
+        <p>Name</p>
+        <p class="info">{{usuario.name}}</p>
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M14 7L17 10" stroke="#918D97" stroke-width="1.5" stroke-linecap="round"/>
             <path d="M15.7146 5.01317C16.7781 3.94958 18.5365 4.07209 19.4424 5.27288C20.2114 6.29232 20.0791 7.72939 19.1369 8.59128L9.55266 17.3583C9.23522 17.6487 8.85903 17.8674 8.44962 17.9996L5.46498 18.9633C5.07702 19.0885 4.71027 18.7218 4.83554 18.3338L5.77765 15.416C5.92369 14.9637 6.17511 14.5526 6.5112 14.2165L15.7146 5.01317Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
@@ -34,15 +39,19 @@
         <div class="email">
         <p>Password</p>
         <p class="info">******</p>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M14 7L17 10" stroke="#918D97" stroke-width="1.5" stroke-linecap="round"/>
             <path d="M15.7146 5.01317C16.7781 3.94958 18.5365 4.07209 19.4424 5.27288C20.2114 6.29232 20.0791 7.72939 19.1369 8.59128L9.55266 17.3583C9.23522 17.6487 8.85903 17.8674 8.44962 17.9996L5.46498 18.9633C5.07702 19.0885 4.71027 18.7218 4.83554 18.3338L5.77765 15.416C5.92369 14.9637 6.17511 14.5526 6.5112 14.2165L15.7146 5.01317Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
         </div>
 
-        <div class="buttons">
-        <button class="logout" (click)="logout()">Logout</button>
-        <button class="delete" (click)="delete()">Delete Account</button>
+
+
+
+        <div class="logoutDelete">
+            <p (click)="delete()">DELETE ACCOUNT</p>
+            <p (click)="logout()">LOG OUT</p>
+            
     </div>
     </div>
 

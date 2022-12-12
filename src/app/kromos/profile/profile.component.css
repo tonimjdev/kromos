@@ -36,7 +36,7 @@ h3 {
 
 }
 .headerUser h3 {
-    color: #fff;
+    color: #D9D9D9;
 }
 .headerUser h5 {
     display:flex;
@@ -53,7 +53,7 @@ h3 {
     display: flex;
 }
 .email svg {
-    margin-bottom: 1em;
+    margin-top:-0.3em;
 }
 p {
     color:#666666;
@@ -64,24 +64,21 @@ p {
     color: #D9D9D9;
     font-weight: 300;
 }
-.buttons {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+.logoutDelete {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1em;
+
+}
+.logoutDelete p {
+    color: #D9D9D9;
+    text-decoration: underline;
+    text-align: center;
+    padding: 0.5em;
 }
 
-button {
-    background: linear-gradient(271.54deg, #20203A -0.97%, #0E0E16 88.94%);
-    color: #fff;
-    width: 340px;
-    padding: 0.6em;
-    border-radius: 10px;
-    margin-bottom: 1em;
-    font-size: 1.1em;
-    font-weight: 300;
-    cursor: pointer;
-    border: none;
-}
-.delete {
-    background: rgb(154, 0, 0);
+.logoutDelete p:first-child {
+    border-right: 1px solid #D9D9D9;
+    width: 200px;
+    margin-right: -2em;
 }

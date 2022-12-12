@@ -21,7 +21,7 @@ export class MycollectionComponent implements OnInit {
   
 
   ngOnInit(): void {
-
+    this.cardsService.getFromLocalStorage('coleccion');
   }
 
 }

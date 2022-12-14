@@ -5,5 +5,5 @@ export interface Kromos {
     category: string;
     country?: string;
     color?: string;
-    color2?: string;
+    kromos?: any;
 }

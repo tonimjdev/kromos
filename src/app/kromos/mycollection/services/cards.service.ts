@@ -1,5 +1,9 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Kromos } from '../interfaces/kromos.interface';
+import { environment } from '../../../../environments/environment.prod';
+import { AuthService } from '../../../auth/services/auth.service';
+import { Observable } from 'rxjs';
 // Importamos coleccion JSON
 let kromosJson = require('../../../../assets/json/kromos.json');
 
@@ -8,7 +12,15 @@ let kromosJson = require('../../../../assets/json/kromos.json');
 })
 export class CardsService {
 
-  constructor() { }
+  get usuario() {
+    return this.authService.usuario;
+  }
+
+  private baseUrl: string =  environment.baseUrl;
+  private userUID: string = this.usuario.uid;
+
+  constructor( private http:HttpClient,
+              private authService: AuthService ) { }
 
 
   todos:Kromos[] = kromosJson;
@@ -32,8 +44,10 @@ sumarCartas( id:number ) {
     let cardIndex = this.todos.findIndex(x => x.id === id);
     this.todos[cardIndex].ud++;
     this.buscarFaltantes();
-    this.saveToLocalStorage();
-    console.log('this.todos', this.todos);
+    this.saveToDataBase(this.todos);
+    // this.saveToLocalStorage(); // Save to DB
+    //this.getFromDataBase();
+    //console.log('this.todos', this.todos);
 }
 
 restarCartas ( id:number ) {
@@ -41,7 +55,8 @@ restarCartas ( id:number ) {
     if ( this.todos[cardIndex].ud > 0 ) {
     this.todos[cardIndex].ud = this.todos[cardIndex].ud - 2;
     this.buscarFaltantes();
-    this.saveToLocalStorage();
+    this.saveToDataBase(this.todos);
+    // this.saveToLocalStorage(); // Save to DB
     } else return;
 
 }
@@ -53,7 +68,7 @@ buscarRepetidos() {
 // TO DO --> Cambiar specials por todos cuando este el JSON completo de la colección
 buscarFaltantes() {
   this.faltantes = this.specials.filter(x => x.ud === 0);
-  console.log('this.faltantes ', this.faltantes);
+  // console.log('this.faltantes ', this.faltantes);
 }
 
 udsRepetidos() {
@@ -83,9 +98,9 @@ udsCountry(pais:String) {
   return this.country;
 }
 
-saveToLocalStorage() {
+/*saveToLocalStorage() {
   localStorage.setItem('coleccion', JSON.stringify(this.todos));
-}
+}*/
 
 getFromLocalStorage(key: string) {
   if (localStorage.getItem(key) === null) {this.todos = kromosJson;
@@ -95,6 +110,27 @@ getFromLocalStorage(key: string) {
   this.countries = this.todos.filter((x:any) => x.category === "Countries");
   this.timeline = this.todos.filter((x:any) => x.category === "Timeline");
 }
+
+saveToDataBase( kromos:object[] ) {
+  const url = `${ this.baseUrl }/user/${this.userUID}`;
+  const body = { kromos };
+
+  this.http.put<Kromos>( url, body )
+  .subscribe((res) => console.log(res));
+
+}
+
+/*getKromos(): Observable<any>{
+  console.log('Dentro servicio getFromDataBase');
+  const url = `${ this.baseUrl }/user/${this.userUID}`;
+  return this.http.get( url );
+}
+
+
+getFromDataBase(){
+  
+}*/
+
 
 
 }

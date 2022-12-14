@@ -21,7 +21,7 @@
     <div class="container stickers">
         <div class="row">
         <div class="card2 mb-3" *ngFor="let cartaPais of cartaspaisElegido" (click)="cartaSel(cartaPais.id)" (click)="progressB.calculos()"
-        [ngStyle]="cartaPais.ud>0 ? {'background-image': cartaPais.color} : {'background-image': cartaPais.color2} ">
+        [ngStyle]="cartaPais.ud>0 ? {'background-image': cartaPais.color} : {'background-image': cartaPais.color,'opacity': '25%'} ">
   
         <div class="duplicate" *ngIf="cartaPais.ud > 1">
             <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">

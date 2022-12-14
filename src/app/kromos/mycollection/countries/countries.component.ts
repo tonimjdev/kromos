@@ -73,9 +73,6 @@ export class CountriesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.cardsService.getFromLocalStorage('coleccion');
-
-
       // Group A
   this.Qatar = this.cPais('Qatar');
   this.Ecuador = this.cPais('Ecuador');

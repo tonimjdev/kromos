@@ -1,9 +1,8 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Kromos } from '../interfaces/kromos.interface';
+import { Kromos, KromosResponse } from '../interfaces/kromos.interface';
 import { environment } from '../../../../environments/environment.prod';
 import { AuthService } from '../../../auth/services/auth.service';
-import { Observable } from 'rxjs';
 // Importamos coleccion JSON
 let kromosJson = require('../../../../assets/json/kromos.json');
 
@@ -41,6 +40,7 @@ country:Kromos[]=[];
 
 
 sumarCartas( id:number ) {
+    console.log('this.todos desde sumarCartas', this.todos);
     let cardIndex = this.todos.findIndex(x => x.id === id);
     this.todos[cardIndex].ud++;
     this.buscarFaltantes();
@@ -80,16 +80,21 @@ udsFaltantes() {
   return this.faltantes;
 }
 
+udsSeccion(seccion:Kromos[]) {
+  this.tengo = seccion.filter(x=> x.ud > 0);
+  return this.tengo
+}
+
 udsSpecials() {
-  this.tengo = this.specials.filter(x => x.ud > 0);
+  this.udsSeccion(this.specials);
   return this.tengo;
 }
 udsCountries() {
-  this.tengo = this.countries.filter(x => x.ud > 0);
+  this.udsSeccion(this.countries);
   return this.tengo;
 }
 udsTimeline() {
-  this.tengo = this.timeline.filter(x => x.ud > 0);
+  this.udsSeccion(this.timeline);
   return this.tengo;
 }
 
@@ -98,20 +103,7 @@ udsCountry(pais:String) {
   return this.country;
 }
 
-/*saveToLocalStorage() {
-  localStorage.setItem('coleccion', JSON.stringify(this.todos));
-}*/
-
-getFromLocalStorage(key: string) {
-  if (localStorage.getItem(key) === null) {this.todos = kromosJson;
-  } else this.todos = JSON.parse(localStorage.getItem(key)!);
-  console.log('servicio getFromLS',JSON.parse(localStorage.getItem(key)!));
-  this.specials = this.todos.filter((x:any) => x.category === "Specials" || x.category === "Stadiums");
-  this.countries = this.todos.filter((x:any) => x.category === "Countries");
-  this.timeline = this.todos.filter((x:any) => x.category === "Timeline");
-}
-
-saveToDataBase( kromos:object[] ) {
+saveToDataBase( kromos:Kromos[] ) {
   const url = `${ this.baseUrl }/user/${this.userUID}`;
   const body = { kromos };
 
@@ -120,17 +112,23 @@ saveToDataBase( kromos:object[] ) {
 
 }
 
-/*getKromos(): Observable<any>{
-  console.log('Dentro servicio getFromDataBase');
+getFromDatabase() {
+  this.userUID = this.usuario.uid;
+  this.todos = kromosJson;
   const url = `${ this.baseUrl }/user/${this.userUID}`;
-  return this.http.get( url );
+  this.http.get<KromosResponse>( url )
+  .subscribe((resp) => {
+    this.todos = resp.user.kromos!;
+    this.specials = this.todos.filter((x:any) => x.category === "Specials" || x.category === "Stadiums");
+    this.countries = this.todos.filter((x:any) => x.category === "Countries");
+    this.timeline = this.todos.filter((x:any) => x.category === "Timeline");
+    this.udsSpecials();
+    this.udsCountries();
+    this.udsTimeline();
+    this.buscarFaltantes();
+    this.buscarRepetidos();
+  });
 }
-
-
-getFromDataBase(){
-  
-}*/
-
 
 
 }

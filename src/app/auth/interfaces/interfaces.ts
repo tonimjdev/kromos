@@ -1,3 +1,4 @@
+import { Kromos } from '../../kromos/mycollection/interfaces/kromos.interface';
 
 export interface AuthResponse {
     ok: boolean;
@@ -7,6 +8,7 @@ export interface AuthResponse {
     latitude?: number;
     longitude?: number;
     picture?: string;
+    kromos?: Kromos[];
     token?: string;
     msg?: string;
 }
@@ -18,4 +20,5 @@ export interface Usuario {
     latitude?: number;
     longitude?: number;
     picture?:string;
+    kromos?:Kromos[];
 }

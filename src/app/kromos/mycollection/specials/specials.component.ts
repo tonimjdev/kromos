@@ -15,18 +15,17 @@ export class SpecialsComponent implements OnInit {
 
   totalEspeciales:number = this.cardsService.udsSpecials().length;
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
   }
   
   get specials() {
+    console.log('Specials', this.cardsService.specials)
     return this.cardsService.specials;
   }
-
 
   cartaSel( id:number ) {
     this.cardsService.sumarCartas(id);
   }
-
 
   resta( id:number ) {
     this.cardsService.restarCartas(id);

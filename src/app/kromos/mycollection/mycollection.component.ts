@@ -21,13 +21,8 @@ export class MycollectionComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.cardsService.getFromLocalStorage('coleccion');
-    this.totalFaltantes = this.cardsService.udsFaltantes().length;
-    this.totalRepes = this.cardsService.udsRepetidos().length;
+    this.cardsService.getFromDatabase();
 
-    this.totalEspeciales = this.cardsService.udsSpecials().length;
-    this.totalPaises = this.cardsService.udsCountries().length;
-    this.totalHistoricos = this.cardsService.udsTimeline().length;
   }
 
 }

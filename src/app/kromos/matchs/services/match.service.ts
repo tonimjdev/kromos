@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { KromosMatch } from '../interfaces/usermatch.interface';
+import { environment } from '../../../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +14,12 @@ export class MatchService {
   // ********************* UNIDADES POR CADA USUARIO (i_want)
   udsPorUser: any = {};
 
+  private baseUrl: string =  environment.baseUrl;
+
 
   // Actualizar DB de KromosMatch y guardar el array actualizado
   actualizarKromosMatch() {
-    this.http.get(`http://localhost:4000/api/kromos`)
+    this.http.get(`${this.baseUrl}/kromos`)
     .subscribe((resp:any) => {
       this.kromosMatch = resp.kromos;
     })

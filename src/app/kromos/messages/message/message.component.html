@@ -23,33 +23,16 @@
 
 
 
-        <div class="chat">
-        <div class="globoUser">
-            <p>Hi, I see you have several stickers
-                that I actually need. Do you want to have a look at my collection and see what sticker you might need?</p>
+        <div #scrollable class="chat scrollable">
+
+        <div *ngFor="let globo of conversation"
+        [ngClass]="globo.sender === usuario.uid ? 'globoMe' : 'globoUser' ">
+            <p>{{globo.content}}</p>
+            <span>{{globo.timestamp | date:'h:mm' }}</span>
         </div>
-        <div class="globoMe">
-            <p>Hi there! Which neighbourhood are you living in?</p>
         </div>
-        <div class="globoUser">
-            <p>I’m in Montjuïc, but I can come to your neighbourhood.</p>
-        </div>
-        <div class="globoMe">
-            <p>I’ll be back in Barcelona next week, as I am in vacation right now... </p>
-        </div>
-        <div class="globoUser">
-            <p>Don’t worry, we’ll talk when you get back from vacation.</p>
-        </div>
-        <div class="globoMe">
-            <p>Okay, don’t worry I keep the stickers </p>
-        </div>
-        <div class="globoUser">
-            <p>Great thank you very much, I am eager to finish my collection :)</p>
-        </div>
-        <div class="globoMe">
-            <p>See u soon! :) </p>
-        </div>
-        
+
+
         <div class="typeSomething fixed-bottom">
             <input type="text" placeholder="Type something...">
 
@@ -61,4 +44,4 @@
         </div>
     </div>
         
-    </div>
+

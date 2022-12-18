@@ -45,6 +45,17 @@
     justify-content: center;
     gap: 1em;
     margin: 9em 0 6em 0;
+    
+}
+.scrollable {
+    overflow: scroll;
+}
+.chat span {
+    font-size: 0.6em;
+    font-weight: 300;
+    color:#bdbdbd;
+    display: flex;
+    margin-bottom: 0;
 }
 
 .globoUser {
@@ -55,6 +66,7 @@
     flex-direction: row;
     padding: 0.5em 0.8em 0.5em 0.8em;
     margin-left: 0.6em;
+    gap: 0.5em;
 
 }
 .globoUser p {
@@ -71,9 +83,10 @@
     border-radius: 15px;
     display: flex;
     flex-direction: row;
-    align-items: start;
+    align-items: flex-start;
     padding: 0.5em 0.8em 0.5em 0.8em;
     margin-right: 0.6em;
+    gap: 0.5em;
 
 }
 .globoMe p {

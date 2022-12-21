@@ -14,33 +14,93 @@ export class MessagesComponent implements OnInit {
     return this.authService.usuario;
   }
 
-  myConversations:any [] = [];
-  interlocutores:any [] = [];
+  myConversations:any[] = [];
+  interlocutores:any[] = [];
   totalInterlocutores:any[]=[];
+  conversation:any;
 
   constructor( private messagesService: MessageService,
               private authService: AuthService,
               private userService: UsersService ) { }
 
-  ngOnInit(): void {
+  nombreFotoInterlocutor(idUser:string) {
+    return new Promise((resolve) => {
+        this.userService.getUserById(idUser)
+      .subscribe(
+        res => {
+          resolve (Object.values(res)
+            .map(entry => {
+              let nombre = entry.name;
+              let foto = entry.picture;
+              return [nombre, foto];
+            }));
+        })})
+  }
+
+  ultimaFraseInterlocutor(idInterlocutor:string) {
+    return new Promise((resolve) => {
+      this.messagesService.getConversationMessages(this.usuario.uid, idInterlocutor)
+    .subscribe(
+      res => {
+        resolve (Object.values(res)
+        .map(frase => {
+          let ultimaFrase = frase.pop().content;
+          return ultimaFrase; 
+        }));
+      })})
+  }
+
+  ultimaFechaInterlocutor(idInterlocutor:string) {
+    return new Promise((resolve) => {
+      this.messagesService.getConversationMessages(this.usuario.uid, idInterlocutor)
+    .subscribe(
+      res => {
+        resolve (Object.values(res)
+        .map(fecha => {
+          let ultimaFecha = fecha.pop().timestamp;
+          return ultimaFecha;
+        }));
+      })})   
+  }
+
+  async totalConversaciones() {
+    this.conversation = [];
+    for (let i=0; i<this.totalInterlocutores.length; i++) {
+
+      let result:any = await this.nombreFotoInterlocutor(this.totalInterlocutores[i]);
+      console.log('Result vuelta',i,': ', result[0]);
+      let ultimaFrase = await this.ultimaFraseInterlocutor(this.totalInterlocutores[i]);
+      let ultimaFecha = await this.ultimaFechaInterlocutor(this.totalInterlocutores[i]);
     
+      this.conversation.push(
+        { name: result[0][0], 
+         picture: result[0][1], 
+        message: ultimaFrase, 
+        date: ultimaFecha}
+        );
+    }
+  }
+
+  ngOnInit(): void {
+
+    this.myConversations = [];
+
     // Capturar conversaciones como Sender
     this.messagesService.getMyConversationsSender(this.usuario.uid)
     .subscribe(
       res => {
         Object.entries(res)
         .map(entry => {
-          this.myConversations = [];
           const [key, value] = entry;
           this.myConversations = value;
-          this.interlocutores = Object.values(this.myConversations).map(x=> x.recipient)
-          console.log({key, value})
-          console.log('This conversationObject: ', this.myConversations);
-          console.log('Interlocutores(dentro Sender): ', this.interlocutores);
+          this.interlocutores.push(Object.values(this.myConversations).map(x=> x.recipient));
+          let interlocutoresFlat = this.interlocutores.flat(1);
+          this.totalInterlocutores = interlocutoresFlat.filter((x, i) => (interlocutoresFlat.indexOf(x) === i));
+          console.log('Total interlocutores ÚNICOS (Sender)', this.totalInterlocutores);
         })
       }
       );
-      
+
       // Capturar conversaciones como Recipient
     this.messagesService.getMyConversationsRecipient(this.usuario.uid)
     .subscribe(
@@ -49,16 +109,12 @@ export class MessagesComponent implements OnInit {
         .map(entry => {
           const [key, value] = entry;
           this.myConversations = value;
-          this.interlocutores.push(Object.values(this.myConversations).map(x=> x.sender))
+          this.interlocutores.push(Object.values(this.myConversations).map(x=> x.sender));
           let interlocutoresFlat = this.interlocutores.flat(1);
-          console.log({key, value})
-          console.log('This conversationObject: ', this.myConversations);
-          console.log('Interlocutores(dentro Recipient): ', this.interlocutores);
-          console.log('InterlocutoresFlat: ', interlocutoresFlat);
           this.totalInterlocutores = interlocutoresFlat.filter((x, i) => (interlocutoresFlat.indexOf(x) === i));
-          
-          console.log('Total interlocutores', this.totalInterlocutores);
+          console.log('Total interlocutores ÚNICOS (Recipient)', this.totalInterlocutores);
         })
+        setTimeout(() => {this.totalConversaciones()}, 100);
       }
       );
   }

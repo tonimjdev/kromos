@@ -7,16 +7,13 @@ import { environment } from '../../../../environments/environment.prod';
 })
 export class MessageService {
 
-
-  public baseUrl: string =  environment.baseUrl;
-
+  baseUrl: string =  environment.baseUrl;
 
   constructor( private http: HttpClient ) { }
   
   getConversationMessages(sender:string, recipient:string) {
     console.log('Sender:',sender, 'Recipient',recipient);
     return this.http.get<any[]>(`${this.baseUrl}/messages/sendrec?sender=${sender}&recipient=${recipient}&sender=${recipient}&recipient=${sender}`);
-
   }
 
   getMyConversationsSender(me:string) {

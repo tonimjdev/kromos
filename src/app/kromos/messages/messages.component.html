@@ -7,17 +7,17 @@
 
     <div class="containerConversations">
 
-            <div class="row">
+            <div class="row" *ngFor="let conversacion of conversation | sort:'conversacion.date'">
                 <div class="card3" routerLink="message">
                   <div class="topCard">
                       <h2>
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80" alt="user image">
-                        Paula Simon</h2>
+                        <img src="{{conversacion.picture}}" alt="user image">
+                        {{conversacion.name}}</h2>
                   <span>
-                     Dec, 5th</span>
+                     {{conversacion.date | date: 'MMM d'}}</span>
                   </div>
                   <div class="lastMessage">
-                    <p>Hey, I thought you might be interested in...</p>
+                    <p>{{conversacion.message}}</p>
                   </div>
                 </div>
             </div>

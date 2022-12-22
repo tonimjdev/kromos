@@ -7,7 +7,7 @@
 
     <div class="containerConversations">
 
-            <div class="row" *ngFor="let conversacion of conversation | sort:'conversacion.date'">
+            <div class="row" *ngFor="let conversacion of conversation">
                 <div class="card3" routerLink="message">
                   <div class="topCard">
                       <h2>
@@ -17,13 +17,11 @@
                      {{conversacion.date | date: 'MMM d'}}</span>
                   </div>
                   <div class="lastMessage">
-                    <p>{{conversacion.message}}</p>
+                    <p>{{conversacion.message | slice:0:43}}
+                      <span *ngIf="conversacion.message.length > 43">...</span></p>
                   </div>
                 </div>
             </div>
-            
-
-
     </div>
 </div>
 

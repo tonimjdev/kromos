@@ -18,6 +18,7 @@ export class MessagesComponent implements OnInit {
   interlocutores:any[] = [];
   totalInterlocutores:any[]=[];
   conversation:any;
+  conversationOrd:any;
 
   constructor( private messagesService: MessageService,
               private authService: AuthService,
@@ -69,16 +70,19 @@ export class MessagesComponent implements OnInit {
 
       let result:any = await this.nombreFotoInterlocutor(this.totalInterlocutores[i]);
       console.log('Result vuelta',i,': ', result[0]);
-      let ultimaFrase = await this.ultimaFraseInterlocutor(this.totalInterlocutores[i]);
+      let ultimaFrase:any = await this.ultimaFraseInterlocutor(this.totalInterlocutores[i]);
       let ultimaFecha = await this.ultimaFechaInterlocutor(this.totalInterlocutores[i]);
-    
+      console.log('Typeof ultimaFrase', typeof(ultimaFrase));
+      console.log('ultimaFrase', ultimaFrase[0]);
       this.conversation.push(
         { name: result[0][0], 
          picture: result[0][1], 
-        message: ultimaFrase, 
+        message: ultimaFrase[0], 
         date: ultimaFecha}
         );
     }
+    this.conversation.sort((a:any,b:any) => (a.date > b.date ? -1 : 1));
+
   }
 
   ngOnInit(): void {

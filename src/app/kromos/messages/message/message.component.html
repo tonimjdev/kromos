@@ -21,9 +21,7 @@
 
 <div class="container">
 
-
-
-        <div #scrollable class="chat scrollable">
+        <div #scrollableContainer class="chat scrollable">
 
         <div *ngFor="let globo of conversation"
         [ngClass]="globo.sender === usuario.uid ? 'globoMe' : 'globoUser' ">
@@ -34,12 +32,20 @@
 
 
         <div class="typeSomething fixed-bottom">
-            <input type="text" placeholder="Type something...">
+            
+            <input type="text" 
+            placeholder="Type something..."
+            [(ngModel)]="inputValue"
+            (keyup.enter)="postMessage(inputValue)" />
 
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.0227 1.11832L1.46017 5.21988C1.33621 5.25378 1.22571 5.32506 1.14372 5.42402C1.06173 5.52298 1.01224 5.64481 1.00199 5.77292C0.991743 5.90102 1.02123 6.02917 1.08645 6.13991C1.15166 6.25065 1.24942 6.33859 1.36642 6.39176L8.05392 9.55582C8.18492 9.61649 8.29013 9.7217 8.3508 9.8527L11.5149 16.5402C11.568 16.6572 11.656 16.755 11.7667 16.8202C11.8774 16.8854 12.0056 16.9149 12.1337 16.9046C12.2618 16.8944 12.3836 16.8449 12.4826 16.7629C12.5816 16.6809 12.6528 16.5704 12.6867 16.4464L16.7883 1.88395C16.8194 1.77768 16.8213 1.66501 16.7939 1.55774C16.7664 1.45048 16.7106 1.35257 16.6323 1.27428C16.5541 1.19599 16.4561 1.1402 16.3489 1.11276C16.2416 1.08532 16.1289 1.08724 16.0227 1.11832V1.11832Z" stroke="#E4E4E4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M8.25684 9.64966L11.7881 6.11841" stroke="#E4E4E4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+            <button type="submit" (click)="postMessage(inputValue)" >
+
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.0227 1.11832L1.46017 5.21988C1.33621 5.25378 1.22571 5.32506 1.14372 5.42402C1.06173 5.52298 1.01224 5.64481 1.00199 5.77292C0.991743 5.90102 1.02123 6.02917 1.08645 6.13991C1.15166 6.25065 1.24942 6.33859 1.36642 6.39176L8.05392 9.55582C8.18492 9.61649 8.29013 9.7217 8.3508 9.8527L11.5149 16.5402C11.568 16.6572 11.656 16.755 11.7667 16.8202C11.8774 16.8854 12.0056 16.9149 12.1337 16.9046C12.2618 16.8944 12.3836 16.8449 12.4826 16.7629C12.5816 16.6809 12.6528 16.5704 12.6867 16.4464L16.7883 1.88395C16.8194 1.77768 16.8213 1.66501 16.7939 1.55774C16.7664 1.45048 16.7106 1.35257 16.6323 1.27428C16.5541 1.19599 16.4561 1.1402 16.3489 1.11276C16.2416 1.08532 16.1289 1.08724 16.0227 1.11832V1.11832Z" stroke="#E4E4E4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8.25684 9.64966L11.7881 6.11841" stroke="#E4E4E4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+
+            </button>
             
         </div>
     </div>

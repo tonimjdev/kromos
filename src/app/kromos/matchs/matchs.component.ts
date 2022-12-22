@@ -65,8 +65,8 @@ export class MatchsComponent implements OnInit {
     "name":"Gaspar Kreutz",
     "i_want":0,
     "distance":0,
-    "latitude":41.731891,
-    "longitude":1.825143,
+    "latitude":41.564446,
+    "longitude":2.010818,
     "pic":"https://images.unsplash.com/photo-1564974288343-7cce73c4b71a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
   },
  ]
@@ -96,9 +96,13 @@ darFoco(valor:string) {
     // 0 - Reset del objeto udsPorUser
     this.matchService.udsPorUser = {};
 
+    
     // 1- Actualizamos estado cromos con DB
+   const actualizarFromDb = async () => {
     console.log('Faltantes', this.faltantes);
-    this.matchService.actualizarKromosMatch();
+    await this.matchService.actualizarKromosMatch();
+    }
+    actualizarFromDb();
 
     // 2- Buscamos todos los cromos que me faltan
     for (let i=0; i<this.faltantes.length; i++) {

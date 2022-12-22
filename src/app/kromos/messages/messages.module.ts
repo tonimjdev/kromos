@@ -6,6 +6,7 @@ import { MessagesRoutingModule } from './messages-routing.module';
 
 import { MessagesComponent } from './messages.component';
 import { MessageComponent } from './message/message.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MessageComponent } from './message/message.component';
   imports: [
     CommonModule,
     SharedModule,
-    MessagesRoutingModule
+    MessagesRoutingModule,
+    FormsModule
   ]
 })
 export class MessagesModule { }

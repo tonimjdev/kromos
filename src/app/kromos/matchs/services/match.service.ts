@@ -19,17 +19,21 @@ export class MatchService {
 
   // Actualizar DB de KromosMatch y guardar el array actualizado
   actualizarKromosMatch() {
-    this.http.get(`${this.baseUrl}/kromos`)
+    return new Promise((resolve) => {
+      this.http.get(`${this.baseUrl}/kromos`)
     .subscribe((resp:any) => {
-      this.kromosMatch = resp.kromos;
+      resolve (this.kromosMatch = resp.kromos);
     })
+    })   
   }
 
-  buscarCromo(idCromo:number) {
+    buscarCromo(idCromo:number) {
+    console.log('KROMOSMATCH: ', this.kromosMatch);
+
     // Buscamos index sticker
     let indexKromo = this.kromosMatch.map(x => x.id_kromo).indexOf(idCromo);
     console.log('indexKromo: ', indexKromo);
-    console.log(`El cromo con id_kromo ${idCromo} lo tienen`, this.kromosMatch[indexKromo].lo_tienen);
+    //console.log(`El cromo con id_kromo ${idCromo} lo tienen`, this.kromosMatch[indexKromo].lo_tienen);
 
     // Vamos guardando los arrays de users en un array
     let usersTienen = [];

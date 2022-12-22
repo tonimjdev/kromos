@@ -122,3 +122,8 @@
     border-top: 1px solid #50555C;
 
 }
+
+button {
+    background: none;
+    border: none;
+}

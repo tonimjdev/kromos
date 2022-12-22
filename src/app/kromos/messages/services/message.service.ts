@@ -8,6 +8,11 @@ import { environment } from '../../../../environments/environment.prod';
 export class MessageService {
 
   baseUrl: string =  environment.baseUrl;
+  conversationId: string = "";
+
+  conversacionElegida( id:string ) {
+    this.conversationId = id;
+  }
 
   constructor( private http: HttpClient ) { }
   

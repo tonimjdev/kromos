@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../services/message.service';
 import { AuthService } from '../../../auth/services/auth.service';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-message',
@@ -9,21 +10,41 @@ import { AuthService } from '../../../auth/services/auth.service';
 })
 export class MessageComponent implements OnInit {
 
- 
-
   get usuario() {
     return this.authService.usuario;
   }
 
+  get conversacionElegida() {
+    return this.messagesService.conversationId;
+  }
+
+  nombre:string = "";
+  foto: string = "";
   conversation:any[] = [];
 
   constructor( private messagesService: MessageService,
-              private authService: AuthService ) { }
+              private authService: AuthService,
+              private userService: UsersService ) { }
 
   ngOnInit(): void {
 
+    this.userService.getUserById(this.conversacionElegida)
+    .subscribe(
+      res => {
+        Object.values(res)
+        .map(user => {
+        
+          this.nombre = user.name;
+          this.foto = user.picture;
+        
 
-    this.messagesService.getConversationMessages(this.usuario.uid, '6395fbb0afe5c3bbd8a4d063')
+          console.log('nombre: ', this.nombre);
+          console.log('foto: ', this.foto);
+        })
+      }
+    );
+
+    this.messagesService.getConversationMessages(this.usuario.uid, this.conversacionElegida)
     .subscribe(
      
       res => {

@@ -14,6 +14,10 @@ export class MessagesComponent implements OnInit {
     return this.authService.usuario;
   }
 
+  conversacionElegida( id:string ) {
+    this.messagesService.conversacionElegida( id );
+  }
+
   myConversations:any[] = [];
   interlocutores:any[] = [];
   totalInterlocutores:any[]=[];
@@ -33,7 +37,7 @@ export class MessagesComponent implements OnInit {
             .map(entry => {
               let nombre = entry.name;
               let foto = entry.picture;
-              return [nombre, foto];
+              return [nombre, foto, idUser];
             }));
         })})
   }
@@ -75,13 +79,15 @@ export class MessagesComponent implements OnInit {
       console.log('Typeof ultimaFrase', typeof(ultimaFrase));
       console.log('ultimaFrase', ultimaFrase[0]);
       this.conversation.push(
-        { name: result[0][0], 
+        { id: result[0][2],
+         name: result[0][0], 
          picture: result[0][1], 
         message: ultimaFrase[0], 
         date: ultimaFecha}
         );
     }
     this.conversation.sort((a:any,b:any) => (a.date > b.date ? -1 : 1));
+    console.log('This conversation: ', this.conversation);
 
   }
 

@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { KromosMatch } from '../interfaces/usermatch.interface';
 import { environment } from '../../../../environments/environment.prod';
 
 @Injectable({
@@ -10,11 +9,42 @@ export class MatchService {
 
   constructor( private http: HttpClient ) { }
 
+  private baseUrl: string =  environment.baseUrl;
+
+  repesUsers:any[] = [];
+
+  getKromosUsers() {
+    return new Promise((resolve) => {
+      this.http.get(`${this.baseUrl}/user`)
+      .subscribe((res) => {
+        resolve (Object.values(res)
+        .map(kromos => {
+          let getKromos = kromos.kromos;
+          let getId = kromos._id
+          let repes = getKromos.filter((x:any) => x.ud > 1);
+          this.repesUsers = [getId, repes];
+          return this.repesUsers;
+        }))
+      })
+    })
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*
   kromosMatch: KromosMatch[] = [];
   // ********************* UNIDADES POR CADA USUARIO (i_want)
   udsPorUser: any = {};
-
-  private baseUrl: string =  environment.baseUrl;
 
 
   // Actualizar DB de KromosMatch y guardar el array actualizado
@@ -49,7 +79,7 @@ export class MatchService {
   
     unSoloArray.forEach(x => (this.udsPorUser[x] = this.udsPorUser[x]+1 || 1));
     
-  }
+  } */
 
   calcularDistancia( lat1:number, lon1:number, lat2:number, lon2:number ) {
   let R = 6371; // Radio de la Tierra en km

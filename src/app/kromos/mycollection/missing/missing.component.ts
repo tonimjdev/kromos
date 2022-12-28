@@ -16,6 +16,7 @@ export class MissingComponent implements OnInit {
 
   ngOnInit(): void {
     this.cardsService.buscarFaltantes();
+    console.log ('Mis Faltantes -> ', this.faltantes)
   }
 
 }

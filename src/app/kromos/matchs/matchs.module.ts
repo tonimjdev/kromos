@@ -5,13 +5,11 @@ import { SharedModule } from '../../shared/shared.module';
 import { MatchsRoutingModule } from './matchs-routing.module';
 
 import { MatchsComponent } from './matchs.component';
-import { SortPipe } from './pipes/sort.pipe';
 
 
 @NgModule({
   declarations: [
-    MatchsComponent,
-    SortPipe
+    MatchsComponent
   ],
   imports: [
     CommonModule,

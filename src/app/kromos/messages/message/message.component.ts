@@ -30,8 +30,6 @@ export class MessageComponent implements OnInit {
               private authService: AuthService,
               private userService: UsersService ) { }
 
-
-              
   postMessage(message:string) {
     if (message) {
       console.log('El mensaje es: ', message);

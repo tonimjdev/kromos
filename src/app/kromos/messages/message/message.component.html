@@ -21,7 +21,7 @@
 
 <div class="container">
 
-        <div #scrollableContainer class="chat scrollable">
+        <div class="chat scrollable">
 
         <div *ngFor="let globo of conversation"
         [ngClass]="globo.sender === usuario.uid ? 'globoMe' : 'globoUser' ">

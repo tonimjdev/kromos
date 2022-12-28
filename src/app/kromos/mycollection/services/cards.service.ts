@@ -67,7 +67,7 @@ buscarRepetidos() {
 }
 // TO DO --> Cambiar specials por todos cuando este el JSON completo de la colección
 buscarFaltantes() {
-  this.faltantes = this.specials.filter(x => x.ud === 0);
+  this.faltantes = this.todos.filter(x => x.ud === 0);
   // console.log('this.faltantes ', this.faltantes);
 }
 

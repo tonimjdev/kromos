@@ -15,7 +15,6 @@ import { RepeatedComponent } from './repeated/repeated.component';
 import { MissingComponent } from './missing/missing.component';
 
 
-
 @NgModule({
   declarations: [
     MycollectionComponent,

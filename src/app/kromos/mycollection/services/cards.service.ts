@@ -16,7 +16,7 @@ export class CardsService {
   }
 
   private baseUrl: string =  environment.baseUrl;
-  private userUID: string = this.usuario.uid;
+
 
   constructor( private http:HttpClient,
               private authService: AuthService ) { }
@@ -104,7 +104,7 @@ udsCountry(pais:String) {
 }
 
 saveToDataBase( kromos:Kromos[] ) {
-  const url = `${ this.baseUrl }/user/${this.userUID}`;
+  const url = `${ this.baseUrl }/user/${this.usuario.uid}`;
   const body = { kromos };
 
   this.http.put<Kromos>( url, body )
@@ -113,22 +113,22 @@ saveToDataBase( kromos:Kromos[] ) {
 }
 
 getFromDatabase() {
-  this.userUID = this.usuario.uid;
   this.todos = kromosJson;
-  const url = `${ this.baseUrl }/user/${this.userUID}`;
+  const url = `${ this.baseUrl }/user/${this.usuario.uid}`;
   this.http.get<KromosResponse>( url )
   .subscribe((resp) => {
     this.todos = resp.user.kromos!;
     this.specials = this.todos.filter((x:any) => x.category === "Specials" || x.category === "Stadiums");
     this.countries = this.todos.filter((x:any) => x.category === "Countries");
     this.timeline = this.todos.filter((x:any) => x.category === "Timeline");
+    
     this.udsSpecials();
     this.udsCountries();
     this.udsTimeline();
     this.buscarFaltantes();
     this.buscarRepetidos();
+    console.log('TERMINADA LA FUNCION GETFROMDATABASE')
   });
 }
-
 
 }

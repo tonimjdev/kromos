@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CardsService } from './services/cards.service';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
   selector: 'app-mycollection',
@@ -8,21 +9,31 @@ import { CardsService } from './services/cards.service';
 })
 export class MycollectionComponent implements OnInit {
 
-  nombrePag = "MyCollection";
-  
-  constructor( private cardsService: CardsService ) { }
- 
-  totalFaltantes:number = this.cardsService.udsFaltantes().length;
-  totalRepes:number = this.cardsService.udsRepetidos().length;
-
-  totalEspeciales:number = this.cardsService.udsSpecials().length;
-  totalPaises:number = this.cardsService.udsCountries().length;
-  totalHistoricos:number = this.cardsService.udsTimeline().length;
-  
-
-  ngOnInit(): void {
-    this.cardsService.getFromDatabase();
-
+  get usuario() {
+    return this.authService.usuario;
   }
 
+  nombrePag = "MyCollection";
+  
+  constructor( private cardsService: CardsService,
+                private authService: AuthService ) { }
+
+  totalFaltantes: number = 0;
+  totalRepes: number = 0;
+  totalEspeciales: number = 0;
+  totalPaises: number = 0;
+  totalHistoricos: number = 0;
+
+  ngOnInit(): void {
+      this.cardsService.getFromDatabase();
+      this.cardsService.buscarFaltantes();
+      this.cardsService.buscarRepetidos();
+    
+    setTimeout(() => {this.totalFaltantes = this.cardsService.udsFaltantes().length}, 200);
+    setTimeout(() => {this.totalRepes = this.cardsService.udsRepetidos().length;}, 200);
+    setTimeout(() => {this.totalEspeciales = this.cardsService.udsSpecials().length;}, 160);
+    setTimeout(() => {this.totalPaises = this.cardsService.udsCountries().length;}, 160);
+    setTimeout(() => {this.totalHistoricos = this.cardsService.udsTimeline().length;}, 160);
+
+  }
 }

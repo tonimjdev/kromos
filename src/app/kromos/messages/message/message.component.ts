@@ -36,8 +36,8 @@ export class MessageComponent implements OnInit {
       console.log('Sender: ', this.usuario.uid);
       console.log('Reciver: ', this.conversacionElegida);
       this.messagesService.postMyConversation(this.usuario.uid, this.conversacionElegida, message);
-      this.ngOnInit();
-      this.inputValue = ""
+      setTimeout(()=> {this.ngOnInit()}, 30) ;
+      this.inputValue = "";
     } else console.log('MENSAJE VACIO') 
 
   }

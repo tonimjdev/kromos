@@ -14,7 +14,6 @@ export class ProgressbarComponent implements OnInit {
   @Input() totalCntrs!:number;
   @Input() totalTiml!:number;
 
-
   parcial:number = 0;
   total:number = 0;
   porcentaje:number = 0;
@@ -23,9 +22,14 @@ export class ProgressbarComponent implements OnInit {
 
     this.totalSpc = this.cardsService.udsSpecials().length;
     this.totalCntr = this.cardsService.udsCountry(this.pagName).length;
+    this.totalCntrs = this.cardsService.udsCountries().length;
+
     this.totalTiml = this.cardsService.udsTimeline().length;
 
     console.log('inicio funcion calculos, totalSpc,', this.totalSpc);
+    console.log('inicio funcion calculos, totalCntr,', this.totalCntr);
+    console.log('inicio funcion calculos, totalCntrs,', this.totalCntrs);
+    console.log('inicio funcion calculos, totalTimeln,', this.totalTiml);
     if (this.pagName === "MyCollection" || this.pagName === "Profile") {
       this.parcial = this.totalSpc + this.totalCntrs + this.totalTiml; this.total = 670;
       this.porcentaje = Math.round((this.parcial/this.total)*100);

@@ -127,7 +127,6 @@ getFromDatabase() {
     this.udsTimeline();
     this.buscarFaltantes();
     this.buscarRepetidos();
-    console.log('TERMINADA LA FUNCION GETFROMDATABASE')
   });
 }
 

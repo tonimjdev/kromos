@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatchService } from '../services/match.service';
 import { Kromos } from '../../mycollection/interfaces/kromos.interface';
+import { MessageService } from '../../messages/services/message.service';
 let kromosJson = require('../../../../assets/json/kromos.json');
 
 @Component({
@@ -26,7 +27,8 @@ export class UsermatchComponent implements OnInit {
   totalKromos:Kromos[] = kromosJson;
   cromosWant:Kromos[]= [];
 
-  constructor( private matchService: MatchService ) { }
+  constructor( private matchService: MatchService,
+                private messagesService: MessageService ) { }
 
   datosUser() {
     for (let i=0; i<this.matchUsuarios.length; i++) {
@@ -57,6 +59,10 @@ export class UsermatchComponent implements OnInit {
         console.log('KROMOS I WANT, ', this.cromosWant);
        } else console.log('Otro usuario')
     }
+  }
+
+  conversacionElegida( id:string ) {
+    this.messagesService.conversacionElegida( id );
   }
 
   ngOnInit(): void {

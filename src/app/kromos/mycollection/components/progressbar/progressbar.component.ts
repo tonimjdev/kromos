@@ -48,8 +48,9 @@ export class ProgressbarComponent implements OnInit {
   constructor( private cardsService: CardsService ) { }
 
   ngOnInit(): void {
-
-    this.calculos()
+    setTimeout(() => {
+      this.calculos()
+    }, 100)
   }
 
 }

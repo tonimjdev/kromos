@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatchService } from '../services/match.service';
+import { Kromos } from '../../mycollection/interfaces/kromos.interface';
+let kromosJson = require('../../../../assets/json/kromos.json');
 
 @Component({
   selector: 'app-usermatch',
@@ -7,165 +10,61 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsermatchComponent implements OnInit {
 
+  get usuarioElegido() {
+    return this.matchService.usuarioElegido;
+  }
 
-  repes = [
-    {
-      "id":24,
-      "card":"QAT5",
-      "ud": 0,
-      "category":"Countries",
-      "country":"Qatar",
-      "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)"
-      },
-  {
-      "id":25,
-      "card":"QAT6",
-      "ud": 0,
-      "category":"Countries",
-      "country":"Qatar",
-      "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)"
-      },
-  {
-      "id":26,
-      "card":"QAT7",
-      "ud": 0,
-      "category":"Countries",
-      "country":"Qatar",
-      "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)"
-      },
-  {
-      "id":27,
-      "card":"QAT8",
-      "ud": 0,
-      "category":"Countries",
-      "country":"Qatar",
-      "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)"
-      },
-  {
-      "id":28,
-      "card":"QAT9",
-      "ud": 0,
-      "category":"Countries",
-      "country":"Qatar",
-      "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)"
-      },
-  {
-      "id":29,
-      "card":"QAT10",
-      "ud": 0,
-      "category":"Countries",
-      "country":"Qatar",
-      "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)"
-      },
-  {
-      "id":30,
-      "card":"QAT11",
-      "ud": 0,
-      "category":"Countries",
-      "country":"Qatar",
-      "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)"
-      },
-  {
-      "id":31,
-      "card":"QAT12",
-      "ud": 0,
-      "category":"Countries",
-      "country":"Qatar",
-      "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)"
-      },
-  {
-      "id":32,
-      "card":"QAT13",
-      "ud": 0,
-      "category":"Countries",
-      "country":"Qatar",
-      "color":"linear-gradient(188.51deg, #9A004A 11.08%, #210E17 93.49%)"
-      },
-      {
-        "id":79,
-        "card":"SEN20",
-        "ud": 0,
-        "category":"Countries",
-        "country":"Senegal",
-        "color":"linear-gradient(195.74deg, #01A880 31.71%, #002119 97.25%)"
-        },
-    {
-        "id":80,
-        "card":"NED1",
-        "ud": 0,
-        "category":"Countries",
-        "country":"Netherlands",
-        "color":"linear-gradient(213.42deg, #B85800 31.93%, #100800 96.56%)"
-        },
-    {
-        "id":81,
-        "card":"NED2",
-        "ud": 0,
-        "category":"Countries",
-        "country":"Netherlands",
-        "color":"linear-gradient(213.42deg, #B85800 31.93%, #100800 96.56%)"
-        },
-        {
-          "id":55,
-          "card":"ECU16",
-          "ud": 0,
-          "category":"Countries",
-          "country":"Ecuador",
-          "color":"linear-gradient(355.77deg, #001769 3.44%, #DEBB00 69.63%)"
-          },
-      {
-          "id":56,
-          "card":"ECU17",
-          "ud": 0,
-          "category":"Countries",
-          "country":"Ecuador",
-          "color":"linear-gradient(355.77deg, #001769 3.44%, #DEBB00 69.63%)"
-          },
-      {
-          "id":57,
-          "card":"ECU18",
-          "ud": 0,
-          "category":"Countries",
-          "country":"Ecuador",
-          "color":"linear-gradient(355.77deg, #001769 3.44%, #DEBB00 69.63%)"
-          },
-      {
-          "id":58,
-          "card":"ECU19",
-          "ud": 0,
-          "category":"Countries",
-          "country":"Ecuador",
-          "color":"linear-gradient(355.77deg, #001769 3.44%, #DEBB00 69.63%)"
-          },
-      {
-          "id":59,
-          "card":"ECU20",
-          "ud": 0,
-          "category":"Countries",
-          "country":"Ecuador",
-          "color":"linear-gradient(355.77deg, #001769 3.44%, #DEBB00 69.63%)"
-          },
-      {
-          "id":60,
-          "card":"SEN1",
-          "ud": 0,
-          "category":"Countries",
-          "country":"Senegal",
-          "color":"linear-gradient(195.74deg, #01A880 31.71%, #002119 97.25%)"
-          },
-      {
-          "id":61,
-          "card":"SEN2",
-          "ud": 0,
-          "category":"Countries",
-          "country":"Senegal",
-          "color":"linear-gradient(195.74deg, #01A880 31.71%, #002119 97.25%)"
-          }
-  ]
+  get matchUsuarios() {
+    return this.matchService.matchUsuarios;
+  }
 
-  constructor() { }
+  get capturados() {
+    return this.matchService.capturados;
+  }
+
+  datosUsuario:any;
+  totalKromos:Kromos[] = kromosJson;
+  cromosWant:Kromos[]= [];
+
+  constructor( private matchService: MatchService ) { }
+
+  datosUser() {
+    for (let i=0; i<this.matchUsuarios.length; i++) {
+        if (this.matchUsuarios[i]._id === this.usuarioElegido) {
+            this.datosUsuario = this.matchUsuarios[i];
+            console.log('Datos Usuario, ',this.datosUsuario);
+            i=this.matchUsuarios.length;
+        } else console.log('USUARIO NO ENCONTRADO')
+    }
+  }
+
+  resetCromos() {
+    this.totalKromos.map((x) => x.ud = 0)
+  }
+
+  sumarCromos(id:number) {
+    let cardIndex = this.totalKromos.findIndex(x => x.id === id);
+    this.totalKromos[cardIndex].ud++;
+  }
+
+  crearArrayCromos() {
+    this.resetCromos();
+    for (let i=0; i<this.capturados.length; i++) {
+       if (this.capturados[i].user === this.usuarioElegido) {
+        this.sumarCromos(this.capturados[i].cromo);
+        console.log('TOTAL KROMOS, ', this.totalKromos);
+        this.cromosWant = this.totalKromos.filter((x) => x.ud>0);
+        console.log('KROMOS I WANT, ', this.cromosWant);
+       } else console.log('Otro usuario')
+    }
+  }
 
   ngOnInit(): void {
+      console.log('USUARIO ELEGIDO--> ', this.usuarioElegido);
+      console.log('MATCHS USUARIOS--> ', this.matchUsuarios);
+      console.log('CAPTURADOS --> ', this.capturados);
+      this.datosUser();
+      this.crearArrayCromos();
   }
 
 }

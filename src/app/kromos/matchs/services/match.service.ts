@@ -10,8 +10,25 @@ export class MatchService {
   constructor( private http: HttpClient ) { }
 
   private baseUrl: string =  environment.baseUrl;
-
+  
+  usuarioElegido: string = "";
   repesUsers:any[] = [];
+  matchUsuarios:any[] = [];
+  capturados:any[] = [];
+
+
+  idUsuarioElegido(id:string) {
+    this.usuarioElegido = id;
+  }
+
+  matchUsers(matchs:any[]) {
+    this.matchUsuarios = matchs;
+  }
+
+  matchCapturados(capturados:any[]) {
+    this.capturados = capturados;
+  }
+
 
   getKromosUsers() {
     return new Promise((resolve) => {

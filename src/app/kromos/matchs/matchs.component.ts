@@ -22,6 +22,12 @@ export class MatchsComponent implements OnInit {
   latitud:number = this.usuario.latitude!;
   longitud:number = this.usuario.longitude!;
 
+// Función para elegir usuario
+usuarioElegido(id:string) {
+  console.log('La ID del usuario que has elegido es: ', id);
+  this.matchService.idUsuarioElegido(id);
+}
+
 // Función para cambiar orden array segun número de cromos o distancia
 cambiarOrden(valor:string) {
   if (valor == 'distancia'){
@@ -78,9 +84,11 @@ matchs:any[] = [];
           }
     }
     console.log('MATCHS CAPTURADOS ---> ', this.capturarMatchs);
+    this.matchService.matchCapturados(this.capturarMatchs);
     // Unificar users repetidos
     let soloUsuarios = this.capturarMatchs.map(objeto => objeto.user)
     this.unificarUsers = unique(soloUsuarios); 
+    console.log('UNIFICAR USERS', this.unificarUsers);
       // Montamos el array de matches  por usuario
       for (let i = 0; i < this.unificarUsers.length; i++) {
         this.usersService
@@ -94,8 +102,9 @@ matchs:any[] = [];
               let longitude = entry.longitude;
               let i_want = soloUsuarios.filter(id => id === _id).length;
               let distance = this.matchService.calcularDistancia(latitude, longitude, this.latitud, this.longitud);
-              this.matchs.push({ name, pic, latitude, longitude, i_want, distance });
+              this.matchs.push({ _id, name, pic, latitude, longitude, i_want, distance });
               this.matchs.sort((a:any,b:any) => (a.i_want > b.i_want ? -1 : 1));
+              this.matchService.matchUsers(this.matchs);
               console.log('MATCHS', this.matchs);
             });
           });

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CardsService } from './services/cards.service';
-import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
   selector: 'app-mycollection',

@@ -27,7 +27,7 @@
 
         <div class="containerCards">
             <div class="row">
-                <div class="card3" *ngFor="let match of matchs" routerLink="usermatch">
+                <div class="card3" *ngFor="let match of matchs" routerLink="usermatch" (click)="usuarioElegido(match._id)">
                   <div class="topCard">
                       <h2>
                         <img src="{{match.pic}}" alt="user image">

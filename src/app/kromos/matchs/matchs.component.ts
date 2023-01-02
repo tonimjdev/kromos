@@ -72,17 +72,14 @@ matchs:any[] = [];
 
     this.capturarMatchs = [];
     this.unificarUsers = [];
-    
-    for (let i=0; i<this.repetidosUsuarios.length; i++) {
-      let stickersLength=this.repetidosUsuarios[i][1].length;
 
-        for (let x=0; x<stickersLength; x++){
-          if (this.faltantes.some(item => item.id === this.repetidosUsuarios[i][1][x].id)) { 
-            this.capturarMatchs.push({user: this.repetidosUsuarios[i][0], cromo: this.repetidosUsuarios[i][1][x].id})
-            console.log ('ESTE CROMO TE FALTA!!! --> ',this.repetidosUsuarios[i][1][x].id)}
-          else console.log ('El cromo con ID:', this.repetidosUsuarios[i][1][x].id, 'ya lo tienes.');
-          }
-    }
+    this.repetidosUsuarios.forEach(([user, stickers]: [string, any[]]) => {
+      stickers.forEach((sticker: any) => {
+        if (this.faltantes.some(item => item.id === sticker.id)) {
+          this.capturarMatchs.push({user, cromo: sticker.id});
+        }
+      });
+    });
     console.log('MATCHS CAPTURADOS ---> ', this.capturarMatchs);
     this.matchService.matchCapturados(this.capturarMatchs);
     // Unificar users repetidos

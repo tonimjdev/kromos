@@ -117,7 +117,10 @@ getFromDatabase() {
   const url = `${ this.baseUrl }/user/${this.usuario.uid}`;
   this.http.get<KromosResponse>( url )
   .subscribe((resp) => {
-    this.todos = resp.user.kromos!;
+    if (resp.user.kromos!.length === 0) {this.todos = kromosJson} else 
+    {
+      this.todos = resp.user.kromos!;
+    }
     this.specials = this.todos.filter((x:any) => x.category === "Specials" || x.category === "Stadiums");
     this.countries = this.todos.filter((x:any) => x.category === "Countries");
     this.timeline = this.todos.filter((x:any) => x.category === "Timeline");

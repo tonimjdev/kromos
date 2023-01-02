@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MessageService } from './services/message.service';
 import { AuthService } from '../../auth/services/auth.service';
 import { UsersService } from '../services/users.service';
+import { zip } from 'rxjs';
 
 @Component({
   selector: 'app-messages',
@@ -14,15 +15,13 @@ export class MessagesComponent implements OnInit {
     return this.authService.usuario;
   }
 
-  conversacionElegida( id:string ) {
-    this.messagesService.conversacionElegida( id );
-  }
 
   myConversations:any[] = [];
   interlocutores:any[] = [];
   totalInterlocutores:any[]=[];
   conversation:any;
   conversationOrd:any;
+  conversacionLeida:boolean = true;
 
   constructor( private messagesService: MessageService,
               private authService: AuthService,
@@ -42,6 +41,43 @@ export class MessagesComponent implements OnInit {
         })})
   }
 
+  ultimoRecipient(idInterlocutor:string) {
+    return new Promise((resolve) => {
+      this.messagesService.getConversationMessages(this.usuario.uid, idInterlocutor)
+    .subscribe(
+      res => {
+        resolve (Object.values(res)
+        .map(destinatario => {
+          let lastRecipient = destinatario.pop().recipient;
+          return lastRecipient;
+        }));
+      })})
+  }
+  ultimoRead(idInterlocutor:string) {
+    return new Promise((resolve) => {
+      this.messagesService.getConversationMessages(this.usuario.uid, idInterlocutor)
+    .subscribe(
+      res => {
+        resolve (Object.values(res)
+        .map(leido => {
+          let lastRead = leido.pop().read;
+          return lastRead;
+        }));
+      })})
+  }
+
+  ultimaFraseId(idInterlocutor:string) {
+    return new Promise((resolve) => {
+      this.messagesService.getConversationMessages(this.usuario.uid, idInterlocutor)
+    .subscribe(
+      res => {
+        resolve (Object.values(res)
+        .map(fraseId => {
+          let ultimaFraseId = fraseId.pop()._id;
+          return ultimaFraseId; 
+        }));
+      })})
+  }
   ultimaFraseInterlocutor(idInterlocutor:string) {
     return new Promise((resolve) => {
       this.messagesService.getConversationMessages(this.usuario.uid, idInterlocutor)
@@ -68,6 +104,12 @@ export class MessagesComponent implements OnInit {
       })})   
   }
 
+  async conversacionElegida( id:string ) {
+    this.messagesService.conversacionElegida( id );
+    let lastFraseId:any = await this.ultimaFraseId(id);
+    this.messagesService.pasarALeido(lastFraseId);
+  }
+
   async totalConversaciones() {
     this.conversation = [];
     for (let i=0; i<this.totalInterlocutores.length; i++) {
@@ -76,6 +118,8 @@ export class MessagesComponent implements OnInit {
       console.log('Result vuelta',i,': ', result[0]);
       let ultimaFrase:any = await this.ultimaFraseInterlocutor(this.totalInterlocutores[i]);
       let ultimaFecha = await this.ultimaFechaInterlocutor(this.totalInterlocutores[i]);
+      let lastRead:any = await this.ultimoRead(this.totalInterlocutores[i]);
+      let lastRecipient:any = await this.ultimoRecipient(this.totalInterlocutores[i]);
       console.log('Typeof ultimaFrase', typeof(ultimaFrase));
       console.log('ultimaFrase', ultimaFrase[0]);
       this.conversation.push(
@@ -83,7 +127,9 @@ export class MessagesComponent implements OnInit {
          name: result[0][0], 
          picture: result[0][1], 
         message: ultimaFrase[0], 
-        date: ultimaFecha}
+        date: ultimaFecha,
+        read: lastRead[0],
+        recipient: lastRecipient[0]}
         );
     }
     this.conversation.sort((a:any,b:any) => (a.date > b.date ? -1 : 1));

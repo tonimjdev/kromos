@@ -8,16 +8,19 @@
     <div class="containerConversations">
 
             <div class="row" *ngFor="let conversacion of conversation">
-                <div class="card3" routerLink="message" (click)="conversacionElegida(conversacion.id)">
+                <div class="card3" routerLink="message" (click)="conversacionElegida(conversacion.id)"
+                [ngStyle]="!conversacion.read && conversacion.recipient===usuario.uid ? 
+                {'background': 'linear-gradient(271.54deg, #20203A -0.97%, #0E0E16 88.94%)'} : 
+                {'background': '#14141F'}">
                   <div class="topCard">
-                      <h2>
+                      <h2 [ngStyle]="!conversacion.read && conversacion.recipient===usuario.uid ? {'font-weight': '600'} : {'font-weight': '400'}">
                         <img src="{{conversacion.picture}}" alt="user image">
                         {{conversacion.name}}</h2>
                   <span>
                      {{conversacion.date | date: 'MMM d'}}</span>
                   </div>
                   <div class="lastMessage">
-                    <p>{{conversacion.message | slice:0:43}}
+                    <p [ngStyle]="!conversacion.read && conversacion.recipient===usuario.uid ? {'font-weight': '500'} : {'font-weight': '300'}">{{conversacion.message | slice:0:43}}
                       <span *ngIf="conversacion.message.length > 43">...</span></p>
                   </div>
                 </div>

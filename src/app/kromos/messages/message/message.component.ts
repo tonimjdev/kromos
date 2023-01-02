@@ -73,6 +73,10 @@ export class MessageComponent implements OnInit {
 
           console.log({key, value})
           console.log('This conversationObject: ', this.conversation);
+
+          //let lastMessageIndex = this.conversation.length-1;
+          //let idLastConversation = this.conversation[lastMessageIndex]._id;
+          //this.messagesService.pasarALeido(idLastConversation);
         })
       });
 

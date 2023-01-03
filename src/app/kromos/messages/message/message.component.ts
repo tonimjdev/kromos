@@ -10,6 +10,11 @@ import { UsersService } from '../../services/users.service';
 })
 export class MessageComponent implements OnInit {
 
+lastDayPrinted: any;
+updateLastDayPrinted(timestamp:any) {
+  this.lastDayPrinted = (timestamp);
+}
+
   get usuario() {
     return this.authService.usuario;
   }
@@ -25,6 +30,7 @@ export class MessageComponent implements OnInit {
 
   today = new Date();
   now:string = this.today.toLocaleString();
+
 
   constructor( private messagesService: MessageService,
               private authService: AuthService,
@@ -44,6 +50,7 @@ export class MessageComponent implements OnInit {
 
   ngOnInit(): void {
     console.log ('NOW: ',this.today);
+    console.log('LAST DAY PRINTED!!!', this.lastDayPrinted);
 
     this.userService.getUserById(this.conversacionElegida)
     .subscribe(
@@ -74,9 +81,6 @@ export class MessageComponent implements OnInit {
           console.log({key, value})
           console.log('This conversationObject: ', this.conversation);
 
-          //let lastMessageIndex = this.conversation.length-1;
-          //let idLastConversation = this.conversation[lastMessageIndex]._id;
-          //this.messagesService.pasarALeido(idLastConversation);
         })
       });
 

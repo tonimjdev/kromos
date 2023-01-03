@@ -1,7 +1,5 @@
 <div class="cabecera fixed-top">
 
-
-
     <div class="header">
         <a routerLink="../">
             <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,16 +18,22 @@
 </div>
 
 <div class="container">
-
-        <div class="chat scrollable">
-
-        <div *ngFor="let globo of conversation"
-        [ngClass]="globo.sender === usuario.uid ? 'globoMe' : 'globoUser' ">
+    <div class="chat scrollable">
+        {{updateLastDayPrinted("")}}
+        <div *ngFor="let globo of conversation">
+            <div class="globosPos">
+        <ng-container *ngIf="lastDayPrinted !== (globo.timestamp | date: 'MMM d')">
+            <p class="dia">{{ globo.timestamp | date: 'MMM d' }}</p>
+        </ng-container>
+        <div [ngClass]="globo.sender === usuario.uid ? 'globoMe' : 'globoUser' ">
+       
             <p>{{globo.content}}</p>
-            <span>{{globo.timestamp | date:'h:mm' }}</span>
+            <span>{{globo.timestamp | date:'H:mm' }}</span>
         </div>
-        </div>
-
+        {{updateLastDayPrinted(globo.timestamp | date: 'MMM d')}}
+    </div>
+        </div> 
+</div>
 
         <div class="typeSomething fixed-bottom">
             

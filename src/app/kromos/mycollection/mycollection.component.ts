@@ -20,7 +20,7 @@ export class MycollectionComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('TOTAL COUNTRIES', this.cardsService.udsCountries().length);
-      this.cardsService.getFromDatabase();
+      //this.cardsService.getFromDatabase(); /*ACTIVAR CUANDO ESTE EL JSON DE CROMOS OK*/
       this.cardsService.buscarFaltantes();
       this.cardsService.buscarRepetidos();
     

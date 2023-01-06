@@ -64,6 +64,10 @@ button svg {
     margin-bottom: 1.2em;
 }
 
+.card3:hover {
+    cursor: pointer;
+}
+
 .topCard {
     width: 330px;
     display: flex;

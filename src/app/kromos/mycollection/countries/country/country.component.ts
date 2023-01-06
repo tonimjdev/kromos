@@ -45,6 +45,9 @@ export class CountryComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartasPais(this.country);
+
+    // scroll al principio del chat
+    window.scrollTo(0, document.body.scrollTop);
   }
 
 }

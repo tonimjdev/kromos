@@ -68,6 +68,7 @@ p {
     display: flex;
     flex-direction: row;
     margin-left: 1em;
+    margin-bottom: 5em;
 
 }
 .logoutDelete p {
@@ -75,6 +76,7 @@ p {
     text-decoration: underline;
     text-align: center;
     padding: 0.5em;
+    
 }
 
 .logoutDelete p:first-child {

@@ -170,7 +170,7 @@ export class MessagesComponent implements OnInit {
           this.totalInterlocutores = interlocutoresFlat.filter((x, i) => (interlocutoresFlat.indexOf(x) === i));
           console.log('Total interlocutores ÚNICOS (Recipient)', this.totalInterlocutores);
         })
-        setTimeout(() => {this.totalConversaciones()}, 100);
+        setTimeout(() => {this.totalConversaciones()}, 50);
       }
       );
   }

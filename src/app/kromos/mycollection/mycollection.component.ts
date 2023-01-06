@@ -19,13 +19,15 @@ export class MycollectionComponent implements OnInit {
   totalHistoricos: number = 0;
 
   ngOnInit(): void {
+    // scroll al principio del chat
+    window.scrollTo(0, document.body.scrollTop);
     console.log('TOTAL COUNTRIES', this.cardsService.udsCountries().length);
-      this.cardsService.getFromDatabase(); /*ACTIVAR CUANDO ESTE EL JSON DE CROMOS OK*/
+      this.cardsService.getFromDatabase();
       this.cardsService.buscarFaltantes();
       this.cardsService.buscarRepetidos();
     
-    setTimeout(() => {this.totalFaltantes = this.cardsService.udsFaltantes().length}, 250);
-    setTimeout(() => {this.totalRepes = this.cardsService.udsRepetidos().length;}, 250);
+    setTimeout(() => {this.totalFaltantes = this.cardsService.udsFaltantes().length}, 200);
+    setTimeout(() => {this.totalRepes = this.cardsService.udsRepetidos().length;}, 200);
     setTimeout(() => {this.totalEspeciales = this.cardsService.udsSpecials().length;}, 200);
     setTimeout(() => {this.totalPaises = this.cardsService.udsCountries().length;}, 200);
     setTimeout(() => {this.totalHistoricos = this.cardsService.udsTimeline().length;}, 200);

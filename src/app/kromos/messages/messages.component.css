@@ -30,7 +30,7 @@ h5, p {
 
 
 .containerConversations {
-    margin: 0 1em;   
+    margin: 0 1em 5em 1em;  
    }
    
    .card3 {
@@ -40,6 +40,9 @@ h5, p {
        background: linear-gradient(271.54deg, #20203A -0.97%, #0E0E16 88.94%);
        border-radius: 10px;
        margin-bottom: 1.2em;
+   }
+   .card3:hover {
+    cursor: pointer;
    }
    
    .topCard {

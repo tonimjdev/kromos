@@ -6,7 +6,7 @@
     padding-bottom: 6em;
 }
 .header {
-    padding: 1.5em 1em;   
+    padding: 1.5em 1em 0.8em 1em;   
     background-color: #0C0C0E ;
     color: #D9D9D9;
 }
@@ -24,7 +24,12 @@
 .header svg {
     margin-right: 0.5em;
 }
-
+.titleSection {
+    margin-top: 4.5em;
+}
+.scrollable {
+    overflow: scroll;
+}
 .container h1, h4  {
     margin-left: 0.4em;
 }
@@ -70,7 +75,7 @@ h3 {
 .logicaCards {
     display: flex;
     flex-direction: row;
-   gap: 0.6em;
+   gap: 0.7em;
 }
 .duplicate {
     position: absolute;

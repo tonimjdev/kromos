@@ -72,6 +72,8 @@ export class CountriesComponent implements OnInit {
 
 
   ngOnInit(): void {
+    // scroll al principio del chat
+    window.scrollTo(0, document.body.scrollTop);
 
       // Group A
   this.Qatar = this.cPais('Qatar');

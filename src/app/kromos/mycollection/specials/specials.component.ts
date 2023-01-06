@@ -16,7 +16,10 @@ export class SpecialsComponent implements OnInit {
   totalEspeciales:number = this.cardsService.udsSpecials().length;
 
   ngOnInit(): void {  
+    // scroll al principio del chat
+    window.scrollTo(0, document.body.scrollTop);
   }
+  
   
   get specials() {
     console.log('Specials', this.cardsService.specials)

@@ -56,7 +56,7 @@
     font-weight: 300;
     color:#bdbdbd;
     display:flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin-top:auto;
     margin-bottom: 0;
     margin-left:0.7em;

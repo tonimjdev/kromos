@@ -12,27 +12,17 @@ export class MycollectionComponent implements OnInit {
   
   constructor( private cardsService: CardsService ) { }
 
-  totalFaltantes: number = 0;
-  totalRepes: number = 0;
-  totalEspeciales: number = 0;
-  totalPaises: number = 0;
-  totalHistoricos: number = 0;
+  totalFaltantes: number = this.cardsService.udsFaltantes().length;
+  totalRepes: number = this.cardsService.udsRepetidos().length;
+  totalEspeciales: number = this.cardsService.udsSpecials().length;
+  totalPaises: number = this.cardsService.udsCountries().length;
+  totalHistoricos: number = this.cardsService.udsTimeline().length;
 
   ngOnInit(): void {
     // scroll al principio del chat
     window.scrollTo(0, document.body.scrollTop);
     console.log('TOTAL COUNTRIES', this.cardsService.udsCountries().length);
       this.cardsService.getFromDatabase();
-      this.cardsService.buscarFaltantes();
-      this.cardsService.buscarRepetidos();
-    
-    setTimeout(() => {this.totalFaltantes = this.cardsService.udsFaltantes().length}, 200);
-    setTimeout(() => {this.totalRepes = this.cardsService.udsRepetidos().length;}, 200);
-    setTimeout(() => {this.totalEspeciales = this.cardsService.udsSpecials().length;}, 200);
-    setTimeout(() => {this.totalPaises = this.cardsService.udsCountries().length;}, 200);
-    setTimeout(() => {this.totalHistoricos = this.cardsService.udsTimeline().length;}, 200);
-
-    setTimeout(() => {console.log('TOTAL COUNTRIES timeout', this.cardsService.udsCountries().length);}, 200);
 
   }
 }

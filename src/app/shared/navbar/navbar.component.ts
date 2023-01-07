@@ -14,7 +14,6 @@ export class NavbarComponent implements OnInit {
   return this.messageService.noLeido;
  }
 
-
   ngOnInit(): void {
     this.messageService.allReaded();
   }

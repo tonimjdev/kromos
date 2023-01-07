@@ -80,13 +80,14 @@ updateLastDayPrinted(timestamp:any) {
 
           console.log({key, value})
           console.log('This conversationObject: ', this.conversation);
-
         })
       });
-
+      
+      
       // scroll al final del chat
       setTimeout(() => {
         window.scrollTo(0, document.body.scrollHeight);
       }, 100);
+      
     }
   }

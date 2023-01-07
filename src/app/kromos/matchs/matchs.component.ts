@@ -68,7 +68,9 @@ matchs:any[] = [];
 
     // FUNCIÓN PARA CAPTURAR LOS MATCH DE INICIO
     // Capturamos los cromos de cada usuario para buscar sus repetidos
-    const repesUsers = async () => { await this.matchService.getKromosUsers();
+    const repesUsers = async () => { 
+      this.loading = true;
+      await this.matchService.getKromosUsers();
     this.repetidosUsuarios = await this.matchService.getKromosUsers()
 
     this.capturarMatchs = [];
@@ -89,7 +91,7 @@ matchs:any[] = [];
     console.log('UNIFICAR USERS', this.unificarUsers);
       // Montamos el array de matches  por usuario
       for (let i = 0; i < this.unificarUsers.length; i++) {
-        this.loading = true;
+        
         this.usersService
           .getUserById(this.unificarUsers[i])
           .subscribe((res) => {

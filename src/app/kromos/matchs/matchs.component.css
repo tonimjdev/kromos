@@ -103,3 +103,7 @@ button svg {
     padding-bottom: 0.25em;
 }
 
+.loader {
+    height: 60vh;
+    scale: 1.2;
+}

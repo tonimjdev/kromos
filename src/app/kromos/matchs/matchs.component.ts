@@ -10,6 +10,8 @@ import { UsersService } from '../services/users.service';
   styleUrls: ['./matchs.component.css']
 })
 export class MatchsComponent implements OnInit {
+
+  loading:boolean = false;
   
   // Getters de faltantes y datos usuario
   get faltantes() {
@@ -59,7 +61,6 @@ matchs:any[] = [];
                 private usersService: UsersService ) { }
 
   ngOnInit(): void {
-
     // Función para unificar usuarios repetidos en uno solo
     function unique(array:any[]) {
       return array.filter((item, index) => array.indexOf(item) === index);
@@ -88,6 +89,7 @@ matchs:any[] = [];
     console.log('UNIFICAR USERS', this.unificarUsers);
       // Montamos el array de matches  por usuario
       for (let i = 0; i < this.unificarUsers.length; i++) {
+        this.loading = true;
         this.usersService
           .getUserById(this.unificarUsers[i])
           .subscribe((res) => {
@@ -103,6 +105,7 @@ matchs:any[] = [];
               this.matchs.sort((a:any,b:any) => (a.i_want > b.i_want ? -1 : 1));
               this.matchService.matchUsers(this.matchs);
               console.log('MATCHS', this.matchs);
+              this.loading=false;
             });
           });
       }     

@@ -2,11 +2,12 @@
     display: flex;
     flex-direction: column;
     margin-top: 1.2em;
+    margin-bottom: 1em;
     gap: 0.6em;
 }
 
 .fila {
-    width: 200px;
+    width: 262px;
     background: linear-gradient(271.54deg, #20203A -0.97%, #0E0E16 88.94%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display:flex;

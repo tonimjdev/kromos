@@ -38,6 +38,7 @@ h5, p {
        flex-direction: column;
        gap: 0.2em;
        background: linear-gradient(271.54deg, #20203A -0.97%, #0E0E16 88.94%);
+       opacity: 80%;
        border-radius: 10px;
        margin-bottom: 1.2em;
    }
@@ -75,3 +76,8 @@ h5, p {
     width: 280px;
     padding-top: 0.1em;
    }
+
+   .loader {
+    height: 60vh;
+    scale: 1.2;
+}

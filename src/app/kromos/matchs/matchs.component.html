@@ -26,6 +26,13 @@
         </div>
 
         <div class="containerCards">
+           
+                <div *ngIf="loading" class="loader d-flex justify-content-center">
+                    <div class="spinner-border" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+                  <ng-container *ngIf="!loading">
             <div class="row">
                 <div class="card3" *ngFor="let match of matchs" routerLink="usermatch" (click)="usuarioElegido(match._id)">
                   <div class="topCard">
@@ -46,6 +53,7 @@
              
                 </div>
             </div>
+        </ng-container>
         </div>
 </div>
 

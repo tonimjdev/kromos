@@ -11,6 +11,8 @@ import { zip } from 'rxjs';
 })
 export class MessagesComponent implements OnInit {
 
+  loading:boolean = false;
+
   get usuario() {
     return this.authService.usuario;
   }
@@ -133,6 +135,7 @@ export class MessagesComponent implements OnInit {
         );
     }
     this.conversation.sort((a:any,b:any) => (a.date > b.date ? -1 : 1));
+    this.loading= false;
     console.log('This conversation: ', this.conversation);
 
   }
@@ -140,11 +143,12 @@ export class MessagesComponent implements OnInit {
   ngOnInit(): void {
 
     this.myConversations = [];
-
+    
     // Capturar conversaciones como Sender
     this.messagesService.getMyConversationsSender(this.usuario.uid)
     .subscribe(
       res => {
+        this.loading = true;
         Object.entries(res)
         .map(entry => {
           const [key, value] = entry;
@@ -161,6 +165,7 @@ export class MessagesComponent implements OnInit {
     this.messagesService.getMyConversationsRecipient(this.usuario.uid)
     .subscribe(
       res => {
+        this.loading = true;
         Object.entries(res)
         .map(entry => {
           const [key, value] = entry;

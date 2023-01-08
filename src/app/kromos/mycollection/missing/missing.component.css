@@ -3,7 +3,7 @@
     color: #D9D9D9;
 }
 .header {
-    padding: 1.5em 1em;   
+    padding: 1.5em 1em 0.8em 1em;   
     background-color: #0C0C0E ;
     color: #D9D9D9;
 } 
@@ -17,6 +17,9 @@
 }
 .header svg {
     margin-right: 0.5em;
+}
+.titleSection {
+    margin-top: 4.5em;
 }
 .container h1, h4  {
     margin-left: 0.4em;

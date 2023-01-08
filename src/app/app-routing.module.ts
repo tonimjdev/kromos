@@ -3,6 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { ValidarTokenGuard } from './guards/validar-token.guard';
 
 const routes: Routes = [
+  {
+    path: 'splashscreen',
+    loadChildren: () => import('./kromos/splashscreen/splashscreen.module').then( m => m.SplashscreenModule )
+  },
 
   {
     path: 'auth',
@@ -46,7 +50,7 @@ const routes: Routes = [
   },
   {
     path:'**',
-    redirectTo: 'auth'
+    redirectTo: 'splashscreen'
   }
 ];
 

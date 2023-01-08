@@ -10,6 +10,7 @@ import { TrendsModule } from './kromos/trends/trends.module';
 import { MessagesModule } from './kromos/messages/messages.module';
 import { ProfileModule } from './kromos/profile/profile.module';
 import { MatchsModule } from './kromos/matchs/matchs.module';
+import { SplashscreenModule } from './kromos/splashscreen/splashscreen.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MatchsModule } from './kromos/matchs/matchs.module';
         TrendsModule,
         MessagesModule,
         ProfileModule,
-        MatchsModule
+        MatchsModule,
+        SplashscreenModule
     ],
     providers: [],
     bootstrap: [AppComponent]

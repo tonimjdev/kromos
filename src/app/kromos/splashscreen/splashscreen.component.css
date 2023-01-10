@@ -1,17 +1,23 @@
-.container {
+
+* {
+  background-color: #0c0c0e;
+  color: #d9d9d9;
+}
+.caja {
   background-color: #0c0c0e;
   color: #d9d9d9;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 5.5em;
+  padding-top: 190px;
+  padding-bottom: 2em;
 }
 
 h1 {
   font-size: 36px;
   font-weight: 700;
   font-family: Montserrat;
-  margin-top: 190px;
-  margin-bottom: 85px;
 }
 
 button {
@@ -27,7 +33,6 @@ button {
   color: #e4e4e4;
   border-radius: 8px;
   border: none;
-  margin-bottom: 1.5em;
 }
 
 button:hover {
@@ -35,11 +40,8 @@ button:hover {
 }
 
 .ilustracion {
-    z-index: -1;
+  z-index: -1;
 }
 
-.centro {
-    text-align: center;
-    height: 0vh;
-}
+
 
